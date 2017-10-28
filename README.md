@@ -31,4 +31,4 @@ If my experiment is called `tower-of-london`, then my `exp_id` (the identifier) 
  - `github`: Is the most important metadata - the location of the experiment
 
 
-That's it! I am finishing up functions to validate the experiments (using containers and CI) so that When you submit the Pull Request, your experiment metadata will be evaluated, and approved merged will make it available in the [library](https://expfactory.github.io/library). More information will be added about using the library as it is developed.
+That's it! I am finishing up functions to validate the experiments (using containers and CI) so that When you submit the Pull Request, your experiment metadata will be evaluated, and approved merged will make it available in the [library](https://expfactory.github.io/library/index.json). More information will be added about using the library as it is developed.
