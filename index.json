@@ -3,5 +3,12 @@
         "maintainer": "@vsoch",
         "github": "https://github.com/expfactory-experiments/tower-of-london.git",
         "name": "tower-of-london"
-    }
+    },
+    {
+
+       "name": "adaptive-n-back",
+       "maintainer": "@vsoch",
+       "github":   "https://github.com/expfactory-experiments/adaptive-n-back.git"
+
+   }
 ]
