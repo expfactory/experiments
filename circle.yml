@@ -9,4 +9,5 @@ dependencies:
 
 test:
   override:
+    - echo "The Experiment Factory!"
     - python -m unittest test
