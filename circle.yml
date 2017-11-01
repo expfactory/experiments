@@ -5,7 +5,7 @@ dependencies:
     - sudo python3 get-pip.py
     - git clone https://www.github.com/expfactory/expfactory
     - sudo pip install setuptools
-    - cd expfactory && sudo pip install -r requirements.txt && sudo python3 setup.py install
+    - cd expfactory && sudo python3 setup.py install
 
 test:
   override:
