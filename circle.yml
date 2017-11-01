@@ -3,12 +3,10 @@ dependencies:
     - echo "The Experiment Factory!"
     - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
     - /bin/bash Miniconda3-latest-Linux-x86_64.sh -b 
-    - cd /tmp && git clone https://www.github.com/expfactory/expfactory
-    - cd /tmp/expfactory && $HOME/miniconda/bin/python setup.py install
-    - which python
+    - cd /tmp && git clone https://github.com/expfactory/expfactory.git
+    - cd /tmp/expfactory && $HOME/miniconda3/bin/python setup.py install
 
 test:
   override:
     - echo "The Experiment Factory!"
-    - which python
-    - cd $HOME/library && /home/miniconda/bin/python -m unittest test
+    - cd $HOME/library && /home/miniconda3/bin/python -m unittest test
