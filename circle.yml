@@ -9,4 +9,4 @@ dependencies:
 test:
   override:
     - echo "The Experiment Factory!"
-    - cd $HOME/library && /home/miniconda3/bin/python -m unittest test
+    - cd $HOME/library && $HOME/miniconda3/bin/python -m unittest test
