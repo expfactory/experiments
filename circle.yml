@@ -2,10 +2,10 @@ dependencies:
   pre:
     - echo "The Experiment Factory!"
     - wget https://bootstrap.pypa.io/get-pip.py
-    - sudo python3 get-pip.py
+    - sudo python get-pip.py
     - git clone https://www.github.com/expfactory/expfactory
     - sudo pip install setuptools
-    - cd expfactory && sudo python3 setup.py install
+    - cd expfactory && sudo python setup.py install
 
 test:
   override:
