@@ -1,8 +1,7 @@
 dependencies:
   pre:
     - echo "The Experiment Factory!"
-    - cd /tmp && git clone https://www.github.com/expfactory/expfactory
-    - cd expfactory && sudo python setup.py install
+    - cd /tmp && git clone https://www.github.com/expfactory/expfactory && cd expfactory && sudo python setup.py install
 
 test:
   override:
