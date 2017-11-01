@@ -1,13 +1,10 @@
 dependencies:
   pre:
     - echo "The Experiment Factory!"
-    - wget https://bootstrap.pypa.io/get-pip.py
-    - sudo python get-pip.py
-    - git clone https://www.github.com/expfactory/expfactory
-    - sudo pip install setuptools
+    - cd /tmp && git clone https://www.github.com/expfactory/expfactory
     - cd expfactory && sudo python setup.py install
 
 test:
   override:
     - echo "The Experiment Factory!"
-    - python -m unittest test
+    - cd $HOME/library && python -m unittest test
