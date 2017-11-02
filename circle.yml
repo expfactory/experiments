@@ -10,3 +10,4 @@ test:
   override:
     - echo "The Experiment Factory!"
     - cd $HOME/library && $HOME/miniconda3/bin/python -m unittest test
+    - $HOME/miniconda3/bin/python generate.py && cat index.json
