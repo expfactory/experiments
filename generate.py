@@ -44,6 +44,9 @@ experiments = glob("%s/*" %experiments_base)
 
 output_file = "%s/index.json" %(here)
 
+if len(sys.argv) > 1:
+    output_file = sys.argv[1]
+
 validator = LibraryValidator()
 
 final_set = []
