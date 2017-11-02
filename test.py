@@ -49,29 +49,19 @@ class TestLibrary(TestCase):
 
     def setUp(self):
 
-        self.cli = LibraryValidator()
+        self.LibValidator = LibraryValidator()
+        self.ExpValidator = ExperimentValidator()
         self.experiments_base = "%s/experiments" %(here) 
         self.experiments = glob("%s/*" %self.experiments_base)
         
-
-    def test_validate_library(self):
+    def test_library(self):
         '''test_validate_library calls all subfunctions
         '''
         print("...Test: Global Library validation")
         for jsonfile in self.experiments:
-            self.assertTrue(self.cli.validate(jsonfile))
-
-
-class TestExperiments(TestCase):
-
-    def setUp(self):
-
-        # Test repo information
-        self.cli = ExperimentValidator()
-        self.experiments_base = "%s/experiments" %(here) 
-        self.experiments = glob("%s/*" %self.experiments_base)
+            self.assertTrue(self.LibValidator.validate(jsonfile))
         
-    def test_experiments(self):
+    def test_single_experiments(self):
         '''test_load_json ensures that all files load
         '''
         for jsonfile in self.experiments:
@@ -80,7 +70,7 @@ class TestExperiments(TestCase):
             self.assertTrue('github' in config)
             self.assertTrue(isinstance(config,dict))
             url = config['github']
-            self.assertTrue(self.cli.validate(url))
+            self.assertTrue(self.ExpValidator.validate(url))
 
 
 if __name__ == '__main__':
