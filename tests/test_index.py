@@ -51,7 +51,7 @@ hash2 = get_content_hash(comparator)
 os.remove(comparator)
 
 try:
-    print("%s vs. %s %s" %(hash1,hash2))
+    print("%s vs. %s" %(hash1,hash2))
     assert(hash1==hash2)
     print("Metadata has been updated!")
 except AssertionError:
