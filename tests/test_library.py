@@ -31,9 +31,13 @@ import os
 import re
 import sys
 from glob import glob
+from expfactory.utils import read_json
 import json
 
-from expfactory.validator import LibraryValidator
+from expfactory.validator import (
+    LibraryValidator,
+    ExperimentValidator
+)
 from unittest import TestCase
 
 VERSION = sys.version_info[0]
@@ -45,38 +49,28 @@ class TestLibrary(TestCase):
 
     def setUp(self):
 
-        # Test repo information
-        self.validator = LibraryValidator()
+        self.LibValidator = LibraryValidator()
+        self.ExpValidator = ExperimentValidator()
         self.experiments_base = "%s/experiments" %(here) 
         self.experiments = glob("%s/*" %self.experiments_base)
         
-        print("\nSTART-----------------------------------------")
-
-    def tearDown(self):
-        print("END---------------------------------------------")
-
-    def test_validate_extension(self):
-        '''test_validate_extension ensures that all files are json
+    def test_library(self):
+        '''test_validate_library calls all subfunctions
         '''
-        print("TEST: All files must be json")
+        print("...Test: Global Library validation")
         for jsonfile in self.experiments:
-            self.assertTrue(self.validator.validate_extension(jsonfile)) 
-
-
-    def test_load_json(self):
+            self.assertTrue(self.LibValidator.validate(jsonfile))
+        
+    def test_single_experiments(self):
         '''test_load_json ensures that all files load
         '''
-        print("TEST: Files are valid json format")
         for jsonfile in self.experiments:
-            self.assertTrue(self.validator.validate_loading(jsonfile)) 
-
-    def test_validate_json(self):
-        '''test_validate_json ensures that all files have
-        correct variables, naming, and fields
-        '''
-        print("TEST: Validate json content")
-        for jsonfile in self.experiments:
-            self.assertTrue(self.validator.validate_content(jsonfile)) 
+            print("...%s" %os.path.basename(jsonfile))
+            config = read_json(jsonfile)
+            self.assertTrue('github' in config)
+            self.assertTrue(isinstance(config,dict))
+            url = config['github']
+            self.assertTrue(self.ExpValidator.validate(url))
 
 
 if __name__ == '__main__':

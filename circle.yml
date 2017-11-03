@@ -9,4 +9,8 @@ dependencies:
 test:
   override:
     - echo "The Experiment Factory!"
-    - cd $HOME/library && $HOME/miniconda3/bin/python -m unittest test
+    - cd $HOME/library && $HOME/miniconda3/bin/python -m unittest tests.test_library
+    - $HOME/miniconda3/bin/python generate.py metadata.json
+    - echo "Preparing Library Metadata"
+    - cd $HOME/library && $HOME/miniconda3/bin/python tests/test_index.py    
+    - $HOME/miniconda3/bin/python generate.py && cat index.json
