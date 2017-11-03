@@ -54,7 +54,10 @@ def compare_dicts(x,y):
         raise
 
     for i in range(len(x)):
+        print('\n...%s' %x[i]['name'])
         for key,val in x[i].items():
+            if key == "metadata":
+                continue
             try:
                 assert(y[i][key]==val)
                 print("[pass] %s:%s are matching" %(key,val))
