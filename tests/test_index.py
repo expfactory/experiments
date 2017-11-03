@@ -28,7 +28,7 @@ SOFTWARE.
 
 import os
 import sys
-import hashlib
+from expfactory.utils import read_json
 
 here = os.getcwd()
 
@@ -39,6 +39,9 @@ comparator = '%s/metadata.json' % here
 if not os.path.exists(comparator):
     os.system('python generate.py %s' %comparator)
 
+################################################################################
+# Helper functions
+
 def get_content_hash(filename):
     hasher = hashlib.md5()
     with open(filename, 'rb') as filey:
@@ -46,17 +49,30 @@ def get_content_hash(filename):
         hasher.update(buffer)
     return hasher.hexdigest()
 
-hash1 = get_content_hash(index)
-hash2 = get_content_hash(comparator)
+def compare_dicts(x,y):
+    print("Total items x: %s" %len(x))
+    print("Total items y: %s" %len(y))
+    try:
+        assert(len(y)==len(y))
+        print("[pass] lists are equal length")
+    except AssertionError:
+        print("[fail] invalid, number of items must be equal.")
+        raise
+
+    for i in range(len(x)):
+        for key,val in x[i].items():
+            try:
+                assert(y[i][key]==val)
+                print("[pass] %s:%s are matching" %(key,val))
+            except AssertionError:
+                print("[fail] mismatch or missing field for %s" % key)
+                raise                
+    
+################################################################################
+# Tests
+
+x = read_json(index)
+y = read_json(comparator)
+
 os.remove(comparator)
-
-try:
-    print("%s vs. %s" %(hash1,hash2))
-    assert(hash1==hash2)
-    print("Metadata has been updated!")
-except AssertionError:
-    print("-------------------------------------------------------------------")
-    print("The index.json must be updated with running generate.py.")
-    print("Please update, commit, push, and we will test again.")
-    raise
-
+compare_dicts(x,y)
