@@ -42,12 +42,6 @@ if not os.path.exists(comparator):
 ################################################################################
 # Helper functions
 
-def get_content_hash(filename):
-    hasher = hashlib.md5()
-    with open(filename, 'rb') as filey:
-        buffer = filey.read()
-        hasher.update(buffer)
-    return hasher.hexdigest()
 
 def compare_dicts(x,y):
     print("Total items x: %s" %len(x))
