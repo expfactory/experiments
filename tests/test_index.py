@@ -63,6 +63,7 @@ def compare_dicts(x,y):
                 print("[pass] %s:%s are matching" %(key,val))
             except AssertionError:
                 print("[fail] mismatch or missing field for %s" % key)
+                print("%s != %s " %(x[i][key],y[i][key]))
                 raise                
     
 ################################################################################
