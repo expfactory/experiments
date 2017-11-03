@@ -42,6 +42,18 @@ if not os.path.exists(comparator):
 ################################################################################
 # Helper functions
 
+def generate_lookup(x):
+    lookup = dict()
+    for entry in x:
+        try:
+            assert(entry['name'] not in lookup)
+        except:
+            print('[fail] duplicate entry found:')
+            print(entry)
+            raise
+        lookup[entry['name']] = entry
+    return lookup
+
 
 def compare_dicts(x,y):
     print("Total items x: %s" %len(x))
@@ -53,13 +65,17 @@ def compare_dicts(x,y):
         print("[fail] invalid, number of items must be equal.")
         raise
 
-    for i in range(len(x)):
-        print('\n...%s' %x[i]['name'])
-        for key,val in x[i].items():
+    # Generate a lookup for each
+    lookup_x = generate_lookup(x)
+    lookup_y = generate_lookup(y)
+
+    for exp_id, meta in lookup_x.items():
+        print('\n...%s' % meta['name'])
+        for key,val in meta.items():
             if key == "metadata":
                 continue
             try:
-                assert(y[i][key]==val)
+                assert(lookup_y[exp_id][key]==val)
                 print("[pass] %s:%s are matching" %(key,val))
             except AssertionError:
                 print("[fail] mismatch or missing field for %s" % key)
