@@ -31,12 +31,14 @@ import os
 import re
 import sys
 from glob import glob
+from expfactory.logger import bot
 from expfactory.utils import read_json
 import json
 
 from expfactory.validator import (
     LibraryValidator,
-    ExperimentValidator
+    ExperimentValidator,
+    RuntimeValidator
 )
 from unittest import TestCase
 
@@ -51,6 +53,7 @@ class TestLibrary(TestCase):
 
         self.LibValidator = LibraryValidator()
         self.ExpValidator = ExperimentValidator()
+        self.RuntimeValidator = RuntimeValidator()
         self.experiments_base = "%s/experiments" %(here) 
         self.experiments = glob("%s/*" %self.experiments_base)
         
@@ -71,6 +74,23 @@ class TestLibrary(TestCase):
             self.assertTrue(isinstance(config,dict))
             url = config['github']
             self.assertTrue(self.ExpValidator.validate(url))
+
+    def test_previews(self):
+        '''assert that each experiment is previewed at the Github page
+           where served
+        '''
+        bot.test('Testing experiment previews...')
+        for jsonfile in self.experiments:
+            experiment = os.path.basename(jsonfile)
+            print("...%s experiment preview?" %experiment)
+            config = read_json(jsonfile)
+            self.assertTrue('github' in config)
+            self.assertTrue(isinstance(config,dict))
+            url = config['github']
+            result = self.RuntimeValidator.validate(url)
+            print(result)
+            print(url)        
+            self.assertTrue(result)
 
 
 if __name__ == '__main__':
