@@ -6,7 +6,7 @@ machine:
 
 general:
   artifacts:
-    - "./_site"
+    - "./docs/_site"
 
 dependencies:
   pre:
@@ -19,9 +19,9 @@ dependencies:
     - $HOME/miniconda3/bin/python -m pip install requests
     - rvm --ruby-version use 2.3.1
     - jekyll build
-#    - bundle install
-#    - bundle exec jekyll build
-#    - cd $HOME/experiments/docs && $HOME/miniconda3/bin/python ../tests/circle_urls.py ./_site
+    - bundle install
+    - bundle exec jekyll build
+    - cd $HOME/experiments/docs && $HOME/miniconda3/bin/python ../tests/circle_urls.py $HOME/experiments/docs/_site
 
 test:
   override:
