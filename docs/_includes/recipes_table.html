@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div class="fresh-table toolbar-color-blue full-screen-table">
+    <div class="fresh-table toolbar-color-red full-screen-table">
     <!--    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange                  
             Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
     -->
@@ -8,28 +8,27 @@
             <span style="float:left">
             <img src="img/expfactoryticketyellow.png" style="width:50px; margin-right:30px;float:left"></span>
             <button id="homeBtn" class="btn btn-default">Home</button>
-            <button id="recipesBtn" class="btn btn-default">Recipes</button>
+            <button id="experimentsBtn" class="btn btn-default">Experiments</button>
             <button id="experimentBtn" class="btn btn-default"><i class="fa fa-code"></i></button>
         </div>
         <table id="fresh-table" class="table">
            <thead>
-             <th data-field="github" data-sortable="true">github</th>
-             <th data-field="exp_id" data-sortable="true">exp_id</th>
-             <th data-field="tags" data-sortable="false">tags</th>
+             <th data-field="download" data-sortable="false">view</th>
+             <th data-field="tag" data-sortable="true">tag</th>
+             <th data-field="bootstrap" data-sortable="true">bootstrap</th>
+             <th data-field="from" data-sortable="true">from</th>
              <th data-field="maintainer" data-sortable="true">maintainer</th>
           </thead>
               <tbody>
-                {% for exp in site.library %}
+                {% for recipe in site.recipes %}
                   <tr>
                     <td>
-                        <a href="{{ exp.github }}" target="_blank">
-                           <span class="label label-primary">GITHUB</span></a>
-                        <a href="{{ exp.preview }}" target="_blank">
-                           <span class="label label-primary">DEMO</span></a>
+                        <a href="{{ site.baseurl }}/r/Singularity.{{ recipe.title | downcase }}/index.html" target="_blank">
+                           <span class="label label-primary">VIEW</span></a>
                     </td>
-                    <td><a href="{{ site.baseurl }}/e/{{ exp.name }}">{{ exp.name }}</a></td>
-                    <td>{% for tag in exp.tags %}{{ tag }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</td>
-                    <td>{{ exp.maintainer }}</td>
+                    <td>{{ recipe.bootstrap }}</td>
+                    <td>{{ recipe.from }}</td>
+                    <td>{{ recipe.maintainer }}</td>
                 </tr>
                 {% endfor %}
               </tbody>
@@ -44,7 +43,7 @@
         var $table = $('#fresh-table'),
             $homeBtn = $('#homeBtn'), 
             $experimentBtn = $('#experimentBtn'), 
-            $recipesBtn = $('#recipesBtn'), 
+            $experimentsBtn = $('#experimentsBtn'),
             full_screen = false,
             window_height;
             
@@ -86,8 +85,8 @@
                 document.location = "{{ site.baseurl }}/library.json";
             });
 
-            $recipesBtn.click(function () {
-                document.location = "{{ site.baseurl }}/recipes";
+            $experimentsBtn.click(function () {
+                document.location = "{{ site.baseurl }}/";
             });
                  
             $homeBtn.click(function () {

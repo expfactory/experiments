@@ -24,7 +24,12 @@ colors:  #in hex code if not noted else
 collections:
   library:
     output: true
-    permalink: /r/:title/
+    permalink: /e/:title/
+  recipes:
+    output: true
+    permalink: /r/Singularity.:title/
+    values:
+      layout: "recipe.html"
 
 defaults:
   -
