@@ -1,0 +1,195 @@
+---
+layout: default
+---
+
+   <div class="row">
+        <div class="col-lg-5">
+        <div class="spacing"></div>
+        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/expfactoryticketyellow.png"
+             style="float:left; width:150px; margin-right:30px;margin-bottom:10px"></a>
+        <h4 style="margin-top:30px">Recipe Generator</h4>
+   </div>
+
+<div class="container mtb">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+           <p class="hide" id="result"></p>
+           <!-- Editor Controls -->
+           <p style='float:right'>
+             <a id="btn-download" 
+                 href="#" 
+                 title="download recipes" 
+                 class="btn btn-sm btn-theme">Download</a>
+           </p>
+
+             {% include toolbar.html %}
+
+                {{ content }}
+
+             <div id="textarea">
+                {% include generator_recipe.html %}
+             <br><br>
+            </div>
+         
+        </div>
+
+    </div><! --/row -->
+</div><! --/container -->
+
+{% include notification.html %}
+
+       <!-- Theme included stylesheets -->
+       <link href="//cdn.quilljs.com/1.3.2/quill.snow.css" rel="stylesheet">
+       <link href="//cdn.quilljs.com/1.3.2/quill.bubble.css" rel="stylesheet"> 
+
+        <!-- Include external JS libs. -->
+        <script src="{{ "/js/retina-1.1.0.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/jquery.hoverdir.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/jquery.hoverex.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/jquery.prettyPhoto.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/jquery.isotope.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/toastr.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/jszip.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/jszip-utils.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/FileSaver.min.js" | prepend: site.baseurl }}"></script>
+        <script src="//cdn.quilljs.com/1.3.2/quill.js"></script>
+        <script src="//cdn.quilljs.com/1.3.2/quill.min.js"></script>
+
+<script> 
+var editor;
+var zip = new JSZip();
+
+$(function() {
+
+    // Zip Helpers
+    function resetMessage () {
+        $("#result")
+        .removeClass()
+        .text("");
+    }
+    function showMessage(text) {
+        resetMessage();
+        $("#result")
+        .append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + text)
+        .addClass("alert alert-success alert-dismissible")
+    }
+    function showError(text) {
+        resetMessage();
+        $("#result")
+        .append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + text)
+        .addClass("alert alert-danger alert-dismissible")
+    }
+    function updatePercent(percent) {
+        $("#progress_bar").removeClass("hide")
+        .find(".progress-bar")
+        .attr("aria-valuenow", percent)
+        .css({
+            width : percent + "%"
+        });
+    }
+
+    var Promise = window.Promise;
+    if (!Promise) {
+        Promise = JSZip.external.Promise;
+    }
+
+    if(!JSZip.support.blob) {
+        showError("Download only with a recent browser You will need to copy paste the recipe instead of download.");
+        return;
+    }
+
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.split(search).join(replacement);
+    };
+
+    function html2text( html ) {
+        var d = document.createElement( 'div' );
+        console.log(html)
+        html = html.replaceAll('<p></p>','<br>')
+        console.log(html)
+        d.innerHTML = html;
+        return d.textContent;
+    }
+
+
+    // Initialize Editor
+    var options = {
+        debug: 'warning',
+        modules: {
+            toolbar: "#toolbar",
+        },
+        placeholder: "You can write up an Experiment Container Recipe here.",
+        readOnly: false,
+        theme: 'snow'
+    };
+
+
+    // Download Recipe
+    var customButton = document.querySelector('#download');
+        customButton.addEventListener('click', function() {
+            var text = $('.ql-editor').html().replace('<p>','').replaceAll('&amp;','&') // First line
+            var text = text.replaceAll('<p></p>','\n').replaceAll('<p>','\n').replaceAll('<\p>','\n').replaceAll('<br>','\n')
+            var text = text.replace(/(<([^>]+)>)/g, "");
+            download('Singularity', text)
+    });
+
+    function download(recipe, text){
+        resetMessage();
+        zip.file("Singularity", text);
+        zip.file("README.md", urlToPromise("{{ site.baseurl }}/README"), {binary:true});
+        zip.generateAsync({type:"blob"}).then(function callback(blob) {
+            // see FileSaver.js
+            saveAs(blob, "Singularity.expfactory.zip");
+            showMessage("Download of recipe and supporting files complete.");
+
+        }, function (e) {
+            showError(e);
+        });
+    }
+
+    function urlToPromise(url) {
+        return new Promise(function(resolve, reject) {
+            JSZipUtils.getBinaryContent(url, function (err, data) {
+                if(err) {
+                    reject(err);
+                } else {
+                    resolve(data);
+                }
+            });
+        });
+    }
+
+    // Clear Editor
+    $('#btn-download').click(function(){
+        $('#download').click();
+    })
+
+    editor = new Quill('#textarea', options);
+       
+    // Add recipe text
+   function add_text(editor,content) {
+       var length = editor.getLength() + 1;
+       editor.insertText(length,content)
+   }
+
+    // Get recipes from local storage
+    var experiments = localStorage.getItem('expfactory-experiments');
+    if ((experiments === null) || (experiments == "")){
+       showMessage("You don't have any recipes saved for the generator. This will build a deployment container without recipes.");
+    } else {
+       var experiments = JSON.parse(experiments)
+       var length = Object.keys(experiments).length;
+       showMessage("You have " + length + " experiment added to your container recipe!" );
+       $.each(experiments,function(name, github){
+           add_text(editor,"%appinstall "+ name);
+           add_text(editor,"cd .. && expfactory install -f -b /opt/expfactory/expfactory " + github);
+           add_text(editor,"");
+       })
+   }
+       
+  });
+</script>
+

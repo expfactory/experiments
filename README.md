@@ -18,6 +18,6 @@ If you browse the [library](docs/_library) folder, you'll find simple markdown f
 The application [recipes](docs/_recipes) folder is set up to build recipes that contain all experiments with a particular tag (meaning the markdown file in the `_library`) folder has some term under `tags` in the header. If you have a particular set of experiments with a common tag that you want a recipe automatically generated for, add a new file here. 
 
 ### Custom Container Recipe
-If you've generated your own custom recipe and want to contribute, we recommend you and want to share, please add your recipe here.
+If you've generated your own custom recipe and want to share, we recommend you have the container automatically built on [Singularity Hub](https://www.singularity-hub.org). That way, anyone can pull your container on demand.
 
-For both of these contributions, we are still writing the documentation. Contributing an experiment comes down to a single markdown file in this repository. In the meantime, see our [documentation](https://expfactory.github.io/expfactory) in progress. Thanks for stopping by!
+For details about all of these kinds of contributions, please see our complete [documentation](https://expfactory.github.io/expfactory). Thanks for stopping by!
