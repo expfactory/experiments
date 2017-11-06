@@ -13,7 +13,6 @@
         <table id="fresh-table" class="table">
            <thead>
              <th data-field="github" data-sortable="true">github</th>
-             <th data-field="preview" data-sortable="true">preview</th>
              <th data-field="exp_id" data-sortable="true">exp_id</th>
              <th data-field="tags" data-sortable="false">tags</th>
              <th data-field="maintainer" data-sortable="true">maintainer</th>
@@ -23,12 +22,9 @@
                   <tr>
                     <td>
                         <a href="{{ exp.github }}" target="_blank">
-                           <button class="btn btn-sm btn-primary">
-                              <i class="fa fa-github fa-2x"></i>
-                           </button></a>
-                    </td>
-                    <td>
-                        <a href="{{ exp.preview }}" target="_blank"><button class="btn btn-sm btn-primary">DEMO</button></a>
+                           <span class="label label-primary">GITHUB</span></a>
+                        <a href="{{ exp.preview }}" target="_blank">
+                           <span class="label label-primary">DEMO</span></a>
                     </td>
                     <td><a href="{{ site.baseurl }}/r/{{ exp.name }}">{{ exp.name }}</a></td>
                     <td>{% for tag in exp.tags %}{{ tag }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</td>
