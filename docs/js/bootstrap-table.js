@@ -297,7 +297,7 @@
             paginationSwitchDown: 'glyphicon-collapse-down icon-chevron-down',
             paginationSwitchUp: 'glyphicon-collapse-up icon-chevron-up',
             refresh: 'glyphicon-refresh icon-refresh',
-            toggle: 'fa fa-list',
+            toggle: 'fa fa-list icon-list',
             columns: 'glyphicon-th icon-th',
             detailOpen: 'glyphicon-plus icon-plus',
             detailClose: 'glyphicon-minus icon-minus'
