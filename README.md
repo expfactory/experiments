@@ -5,4 +5,4 @@ This is the library of official experiments provided by the Experiment Factory. 
  - is this experiment generally useful to the larger community? For example, a new task would be useful, but a slightly modified stroop would be better served from your own repository.
  - Once you experiment is added to the library, you as the author are responsible for keeping it up to date and responding to issues, of course with help from our team. Updates will follow the same process.
 
-Ready to get started? The [documentation](https://expfactory.github.io/expfactory) base will walk you through the steps.
+We are still writing the documentation for contributing experiments, which comes down to a single markdown file in this repository. In the meantime, see our [documentation](https://expfactory.github.io/expfactory) in progress. Thanks for stopping by!
