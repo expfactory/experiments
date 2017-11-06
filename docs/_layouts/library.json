@@ -1,0 +1,14 @@
+---
+title: Experiment Factory API
+layout: none
+---
+
+[{% for exp in site.library %}
+    {
+        "name": "{{ exp.name }}",
+        "github": "{{ exp.github }}",
+        "preview": "{{ exp.preview }}",
+        "maintainer": "{{ exp.maintainer }}",
+        {% if exp.tags %}"tags": [{% for tag in exp.tags %}"{{ tag }}"{% if forloop.last %}{% else %},{% endif %}{% endfor %}]{% endif %}
+  }{% if forloop.last %}{% else %},{% endif %}
+{% endfor %}]]
