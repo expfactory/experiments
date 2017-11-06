@@ -16,11 +16,9 @@ dependencies:
     - cd /tmp && git clone https://github.com/expfactory/expfactory.git
     - cd /tmp/expfactory && $HOME/miniconda3/bin/python setup.py install
     - $HOME/miniconda3/bin/python -m pip install pyaml
-    - $HOME/miniconda3/bin/python -m pip install requests
     - rvm --ruby-version use 2.3.1
-    - jekyll build
-    - bundle install
-    - bundle exec jekyll build
+    - cd /tmp/expfactory/docs && bundle install
+    - cd /tmp/expfactory/docs && bundle exec jekyll build
     - cd $HOME/experiments/docs && $HOME/miniconda3/bin/python ../tests/circle_urls.py $HOME/experiments/docs/_site
 
 test:
