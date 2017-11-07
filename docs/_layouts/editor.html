@@ -185,7 +185,7 @@ $(function() {
        showMessage("You have " + length + " experiment added to your container recipe!" );
        $.each(experiments,function(name, github){
            add_text(editor,"%appinstall "+ name);
-           add_text(editor,"cd .. && expfactory install -f -b /opt/expfactory/expfactory " + github);
+           add_text(editor,"cd .. && expfactory install -f " + github);
            add_text(editor,"");
        })
    }
