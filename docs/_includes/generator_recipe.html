@@ -44,7 +44,7 @@ To serve your battery<br>
     gunicorn --bind 0.0.0.0:5000 expfactory.wsgi:app<br>
     service nginx restart<br><br>
 
-%post
+%post<br>
     apt-get update && apt-get install -y nginx git python3-pip python3-dev<br>
     cd /opt && git clone https://www.github.com/expfactory/expfactory<br>
     cd expfactory && cp script/nginx.gunicorn.conf /etc/nginx/sites-enabled/default<br>
