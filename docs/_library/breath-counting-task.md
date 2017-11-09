@@ -5,7 +5,7 @@ maintainer: "@earcanal"
 github: "https://www.github.com/expfactory-experiments/breath-counting-task"
 preview: "https://expfactory-experiments.github.io/breath-counting-task"
 tags:
-- mindfullness
+- mindfulness
 - jspsych
 - experiment
 ---
