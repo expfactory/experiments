@@ -1,6 +1,6 @@
 ---
 layout: experiment
-name:  "alcohol-drugs-abuse"
+name:  "alcohol-drugs-survey"
 maintainer: "@vsoch"
 github: "https://www.github.com/expfactory-experiments/alcohol-drugs-survey"
 preview: "https://expfactory-experiments.github.io/alcohol-drugs-survey"
