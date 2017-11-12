@@ -72,6 +72,7 @@ class TestLibrary(TestCase):
         self.experiments_base = "%s/docs/_library" %(here) 
         self.experiments = self.get_changed_files()
         self.added = [x for x in self.experiments if '_library' in x] 
+        print('Found %s changed or modified files.' %len(self.added))
 
     def get_changed_files(self):
         '''use the Github compare url (provided by circle) to find 
@@ -99,13 +100,15 @@ class TestLibrary(TestCase):
         '''
         print("...Test: Global Library validation")
         for ymlfile in self.experiments:
-            self.assertTrue(self.LibValidator.validate(ymlfile))
-            url = self.LibValidator.metadata['github']
-            self.assertTrue(self.ExpValidator.validate(url))
-            result = self.RuntimeValidator.validate(url)
-            print(result)
-            print(url)        
-            self.assertTrue(result)
+            if os.path.exists(ymlfile):
+                print("TESTING %s" ymlfile)
+                self.assertTrue(self.LibValidator.validate(ymlfile))
+                url = self.LibValidator.metadata['github']
+                self.assertTrue(self.ExpValidator.validate(url))
+                result = self.RuntimeValidator.validate(url)
+                print(result)
+                print(url)        
+                self.assertTrue(result)
 
 
 if __name__ == '__main__':
