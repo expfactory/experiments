@@ -5,16 +5,13 @@ FROM: {{ page.from }}
 # Configure
 ########################################
 
-ENV EXPFACTORY_STUDY_ID {{studyid}}
+ENV EXPFACTORY_STUDY_ID {{page.studyid}}
 ENV EXPFACTORY_SERVER localhost
 ENV EXPFACTORY_CONTAINER true
 ENV EXPFACTORY_DATA /scif/data
-ENV EXPFACTORY_DATABASE {{database}}
+ENV EXPFACTORY_DATABASE {{page.database}}
 ENV EXPFACTORY_BASE /scif/apps
  
-ADD startscript.sh /startscript.sh
-RUN chmod u+x /startscript.sh
-
 RUN apt-get update && apt-get install -y nginx git python3-pip python3-dev
 WORKDIR /opt 
 RUN git clone https://www.github.com/expfactory/expfactory
@@ -30,21 +27,18 @@ RUN cp expfactory/config_dummy.py expfactory/config.py && \
     /bin/bash /opt/expfactory/script/generate_key.sh /opt/expfactory/expfactory/config.py
 RUN python3 setup.py install
 RUN python3 -m pip install pyaml
+RUN cp /expfactory/expfactory/templates/build/docker/startscript.sh /startscript.sh && \<br>
+    chmod u+x /startscript.sh<br>
+
 RUN apt-get clean
 
 ########################################
 # Experiments
 ########################################
 
-{{experiments}}
-
 ENTRYPOINT ["/bin/bash", "/startscript.sh"]
 EXPOSE 5000
 EXPOSE 80
-
-########################################
-# Experiments will be auto generated
-########################################
 
 {% for exp in site.library %}{% assign name = page.title | downcase %}
 LABEL EXPERIMENT_{{ exp.name }} /scif/apps/{{ exp.name }}

@@ -1,19 +1,16 @@
-FROM {{ page.from }}
+FROM ubuntu:16.04<br><br>
 
 ########################################<br>
 # Configure<br>
 ########################################<br><br>
 
-ENV EXPFACTORY_STUDY_ID {{studyid}}<br>
+ENV EXPFACTORY_STUDY_ID expfactory<br>
 ENV EXPFACTORY_SERVER localhost<br>
 ENV EXPFACTORY_CONTAINER true<br>
 ENV EXPFACTORY_DATA /scif/data<br>
 ENV EXPFACTORY_DATABASE filesystem
 ENV EXPFACTORY_BASE /scif/apps<br><br>
  
-ADD startscript.sh /startscript.sh<br>
-RUN chmod u+x /startscript.sh<br>
-
 RUN apt-get update && apt-get install -y nginx git python3-pip python3-dev<br>
 WORKDIR /opt <br>
 RUN git clone https://www.github.com/expfactory/expfactory<br>
@@ -29,6 +26,9 @@ RUN cp expfactory/config_dummy.py expfactory/config.py && \<br>
     /bin/bash /opt/expfactory/script/generate_key.sh /opt/expfactory/expfactory/config.py<br>
 RUN python3 setup.py install<br>
 RUN python3 -m pip install pyaml<br>
+
+RUN cp /expfactory/expfactory/templates/build/docker/startscript.sh /startscript.sh && \<br>
+    chmod u+x /startscript.sh<br>
 RUN apt-get clean<br><br>
 
 ########################################<br>
@@ -37,4 +37,4 @@ RUN apt-get clean<br><br>
 
 ENTRYPOINT ["/bin/bash", "/startscript.sh"]<br>
 EXPOSE 5000<br>
-EXPOSE 80<br><br>
+EXPOSE 80<br>
