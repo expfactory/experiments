@@ -1,62 +1,40 @@
-<br>
-Bootstrap: {{ page.bootstrap }}<br>
-From: {{ page.from }}<br><br>
+FROM {{ page.from }}
 
 ########################################<br>
 # Configure<br>
 ########################################<br><br>
 
-%environment<br>
-    EXPFACTORY_STUDY_ID=expfactory<br>
-    EXPFACTORY_SERVER=localhost<br>
-    export EXPFACTORY_STUDY_ID \<br>
-           EXPFACTORY_SERVER<br><br>
+ENV EXPFACTORY_STUDY_ID {{studyid}}<br>
+ENV EXPFACTORY_SERVER localhost<br>
+ENV EXPFACTORY_CONTAINER true<br>
+ENV EXPFACTORY_DATA /scif/data<br>
+ENV EXPFACTORY_DATABASE filesystem
+ENV EXPFACTORY_BASE /scif/apps<br><br>
+ 
+ADD startscript.sh /startscript.sh<br>
+RUN chmod u+x /startscript.sh<br>
 
+RUN apt-get update && apt-get install -y nginx git python3-pip python3-dev<br>
+WORKDIR /opt <br>
+RUN git clone https://www.github.com/expfactory/expfactory<br>
+WORKDIR expfactory <br>
+RUN cp script/nginx.gunicorn.conf /etc/nginx/sites-enabled/default && \<br>
+    cp script/nginx.conf /etc/nginx/nginx.conf<br>
+RUN mkdir -p /scif/data # saved data<br>
+RUN mkdir -p /scif/apps # experiments <br>
+RUN mkdir -p /scif/logs # gunicorn logs <br>
+RUN python3 -m pip install gunicorn<br>
+RUN cp expfactory/config_dummy.py expfactory/config.py && \<br>
+    chmod u+x /opt/expfactory/script/generate_key.sh && \<br>
+    /bin/bash /opt/expfactory/script/generate_key.sh /opt/expfactory/expfactory/config.py<br>
+RUN python3 setup.py install<br>
+RUN python3 -m pip install pyaml<br>
+RUN apt-get clean<br><br>
 
 ########################################<br>
-# Install No need to touch below here<br>
+# Experiments<br>
 ########################################<br><br>
 
-    EXPFACTORY_CONTAINER=true<br>
-    EXPFACTORY_DATA=/scif/data<br>
-    EXPFACTORY_DATABASE=filesystem<br> 
-    EXPFACTORY_BASE=/scif/apps<br>
-    export EXPFACTORY_BASE EXPFACTORY_DATA \<br>
-           EXPFACTORY_DATABASE \<br>
-           EXPFACTORY_CONTAINER<br><br>
-
-%help<br><br>
-
-If you want to see experiments available:<br>
-    singularity apps expfactory.simg<br><br>
-
-To build your image (sandbox for testing)<br>
-    sudo singularity build --sandbox [expfactory] Singularity<br><br>
-
-To build your image (production)<br>
-    sudo singularity build expfactory.simg Singularity<br><br>
-
-To serve your battery<br>
-    sudo singularity instance.start expfactory.simg web1<br><br>
-
-%startscript<br>
-    service nginx start<br>
-    gunicorn --bind 0.0.0.0:5000 expfactory.wsgi:app<br>
-    service nginx restart<br><br>
-
-%post<br>
-    apt-get update && apt-get install -y nginx git python3-pip python3-dev<br>
-    cd /opt && git clone https://www.github.com/expfactory/expfactory<br>
-    cd expfactory && cp script/nginx.gunicorn.conf /etc/nginx/sites-enabled/default<br>
-    cp script/nginx.conf /etc/nginx/nginx.conf<br>
-    mkdir -p /scif/apps<br>
-    python3 -m pip install gunicorn<br>
-    cp expfactory/config_dummy.py expfactory/config.py<br>
-    chmod u+x /opt/expfactory/script/generate_key.sh<br>
-    /bin/bash /opt/expfactory/script/generate_key.sh /opt/expfactory/expfactory/config.py<br>
-    python3 setup.py install<br><br>
-
-
-########################################<br>
-# Experiments <br>
-########################################
+ENTRYPOINT ["/bin/bash", "/startscript.sh"]<br>
+EXPOSE 5000<br>
+EXPOSE 80<br><br>
