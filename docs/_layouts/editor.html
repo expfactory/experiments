@@ -184,8 +184,10 @@ $(function() {
        var length = Object.keys(experiments).length;
        showMessage("You have " + length + " experiment added to your container recipe!" );
        $.each(experiments,function(name, github){
-           add_text(editor,"%appinstall "+ name);
-           add_text(editor,"cd .. && expfactory install -f " + github);
+
+           add_text(editor, "LABEL EXPERIMENT_" + name + " /scif/apps/" + name);
+           add_text(editor,"WORKDIR /scif/apps");
+           add_text(editor,"RUN expfactory install " + github);
            add_text(editor,"");
        })
    }
