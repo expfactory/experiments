@@ -39,7 +39,8 @@ from subprocess import (
     PIPE,
     STDOUT
 )
-import yaml
+
+import requests
  
 import os
 import re
@@ -69,13 +70,27 @@ class TestLibrary(TestCase):
         self.ExpValidator = ExperimentValidator()
         self.RuntimeValidator = RuntimeValidator()
         self.experiments_base = "%s/docs/_library" %(here) 
-        self.experiments = glob("%s/*" %self.experiments_base)
+        self.experiments = self.get_changed_files()
+        self.added = [x for x in self.experiments if '_library' in x] 
 
-        process = Popen(['git','diff-tree','--no-commit-id','--name-only','-r','HEAD'], stderr=PIPE, stdout=PIPE)
-        added,error = process.communicate()
-        added = [x for x in added.decode('utf-8').split('\n') if x]
-        self.added = [x for x in added if '_library' in x] 
-        
+    def get_changed_files(self):
+        '''use the Github compare url (provided by circle) to find 
+        changed files between commits'''
+
+        # Fallback, return all files in experiment base
+        experiments = glob("%s/*" %self.experiments_base)
+
+        compare_url = os.environ.get("CIRCLE_COMPARE_URL")
+        if compare_url is not None:
+            print('Detected running in Circle CI')
+            compare_url = "%s.patch" % compare_url
+            response = requests.get(compare_url) 
+            if response.status_code == 200:
+                experimets = set(re.findall('docs/_library/.+[.]md [|]',response.text))
+                experiments = [x.strip(' |') for x in experiments]        
+
+        return experiments
+
     def test_experiment(self):
         '''test an experiment, including the markdown file, and repo itself
         '''
