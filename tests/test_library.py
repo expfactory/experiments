@@ -81,6 +81,7 @@ class TestLibrary(TestCase):
         experiments = glob("%s/*" %self.experiments_base)
 
         compare_url = os.environ.get("CIRCLE_COMPARE_URL")
+        print(list(os.environ.keys()))
         if compare_url is not None:
             print('Detected running in Circle CI')
             compare_url = "%s.patch" % compare_url
@@ -88,6 +89,8 @@ class TestLibrary(TestCase):
             if response.status_code == 200:
                 experimets = set(re.findall('docs/_library/.+[.]md [|]',response.text))
                 experiments = [x.strip(' |') for x in experiments]        
+        else:
+            print("Not running in Circle Ci")
 
         return experiments
 
