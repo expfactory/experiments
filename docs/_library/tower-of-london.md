@@ -5,6 +5,7 @@ maintainer: "@vsoch"
 github: "https://www.github.com/expfactory-experiments/tower-of-london"
 preview: "https://expfactory-experiments.github.io/tower-of-london"
 tags:
+- spatial
 - jspsych
 - experiment
 ---
