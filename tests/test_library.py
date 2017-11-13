@@ -101,7 +101,7 @@ class TestLibrary(TestCase):
         print("...Test: Global Library validation")
         for ymlfile in self.experiments:
             if os.path.exists(ymlfile):
-                print("TESTING %s" ymlfile)
+                print("TESTING %s" %ymlfile)
                 self.assertTrue(self.LibValidator.validate(ymlfile))
                 url = self.LibValidator.metadata['github']
                 self.assertTrue(self.ExpValidator.validate(url))
