@@ -1,9 +1,9 @@
 ---
 layout: experiment
-name:  "impulse-venture-survey"
+name:  "impulsive-venture-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/impulse-venture-survey"
-preview: "https://expfactory-experiments.github.io/impulse-venture-survey"
+github: "https://www.github.com/expfactory-experiments/impulsive-venture-survey"
+preview: "https://expfactory-experiments.github.io/impulsive-venture-survey"
 tags:
 - survey
 ---
