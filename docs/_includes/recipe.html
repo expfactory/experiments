@@ -1,47 +1,7 @@
-<br>
-FROM: {{ page.from }}
+#!/bin/bash<br>
 
-########################################
-# Configure
-########################################
+# List experiments : docker run -v $PWD:/data vanessa/expfactory-builder list<br>
+# Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build [experiment1 .. experimentn]<br>
+# Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build --help<br><br>
 
-ENV EXPFACTORY_STUDY_ID {{page.studyid}}
-ENV EXPFACTORY_SERVER localhost
-ENV EXPFACTORY_CONTAINER true
-ENV EXPFACTORY_DATA /scif/data
-ENV EXPFACTORY_DATABASE {{page.database}}
-ENV EXPFACTORY_BASE /scif/apps
- 
-RUN apt-get update && apt-get install -y nginx git python3-pip python3-dev
-WORKDIR /opt 
-RUN git clone https://www.github.com/expfactory/expfactory
-WORKDIR expfactory 
-RUN cp script/nginx.gunicorn.conf /etc/nginx/sites-enabled/default && \
-    cp script/nginx.conf /etc/nginx/nginx.conf
-RUN mkdir -p /scif/data # saved data
-RUN mkdir -p /scif/apps # experiments 
-RUN mkdir -p /scif/logs # gunicorn logs 
-RUN python3 -m pip install gunicorn
-RUN cp expfactory/config_dummy.py expfactory/config.py && \
-    chmod u+x /opt/expfactory/script/generate_key.sh && \
-    /bin/bash /opt/expfactory/script/generate_key.sh /opt/expfactory/expfactory/config.py
-RUN python3 setup.py install
-RUN python3 -m pip install pyaml
-RUN cp /expfactory/expfactory/templates/build/docker/startscript.sh /startscript.sh && \<br>
-    chmod u+x /startscript.sh<br>
-
-RUN apt-get clean
-
-########################################
-# Experiments
-########################################
-
-ENTRYPOINT ["/bin/bash", "/startscript.sh"]
-EXPOSE 5000
-EXPOSE 80
-
-{% for exp in site.library %}{% assign name = page.title | downcase %}{% if exp.tags contains page.tag %}
-LABEL EXPFACTORY_{{ exp.name }} /scif/apps/{{ exp.name }}
-WORKDIR /scif/apps
-RUN expfactory install {{ exp.github }}
-{% endif %}{% endfor %}
+docker run -v $PWD:/data vanessa/expfactory-builder {% for exp in site.library %}{% assign name = page.title | downcase %}{% if exp.tags contains page.tag %} exp.name {% endif %}{% endfor %}
