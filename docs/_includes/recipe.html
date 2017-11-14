@@ -1,7 +1,9 @@
-#!/bin/bash<br>
+#!/bin/bash
 
-# List experiments : docker run -v $PWD:/data vanessa/expfactory-builder list<br>
-# Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build [experiment1 .. experimentn]<br>
-# Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build --help<br><br>
+# Container        : {{ page.base }}
 
-docker run -v $PWD:/data vanessa/expfactory-builder {% for exp in site.library %}{% assign name = page.title | downcase %}{% if exp.tags contains page.tag %} exp.name {% endif %}{% endfor %}
+# List experiments : docker run -v $PWD:/data vanessa/expfactory-builder list
+# Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build [experiment1 .. experimentn]
+# Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build --help
+
+docker run -v $PWD:/data vanessa/expfactory-builder {% for exp in site.library %}{% assign name = page.title | downcase %}{% if exp.tags contains page.tag %}{{ exp.name }}{% endif %}{% endfor %}
