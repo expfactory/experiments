@@ -9,4 +9,4 @@
 # Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build [experiment1 .. experimentn]
 # Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build --help
 
-docker run -v $PWD:/data vanessa/expfactory-builder {% for exp in site.library %}{% assign name = page.title | downcase %}{% if exp.tags contains page.tag %}{{ exp.name }}{% endif %}{% endfor %}
+docker run -v $PWD:/data vanessa/expfactory-builder build {% for exp in site.library %}{% assign name = page.title | downcase %}{% if exp.tags contains page.tag %}{{ exp.name }}{% endif %}{% endfor %}
