@@ -5,12 +5,11 @@
 # Container        : {{ page.base }}
 # Tag              : {{ page.tag }}
 
-
 # List experiments : docker run vanessa/expfactory-builder list
 # Options          : docker run vanessa/expfactory-builder build --help
 # Make Dockerfile  : docker run -v /tmp/my-experiment:/data vanessa/expfactory-builder build [experiment1 .. experimentn]
 # Build Dockerfile : docker build -t vanessa/{{ page.tag }} .
-# Run container    : docker run -v /tmp/data:/scif/data vanessa/{{ page.tag }} start
+# Run container    : docker run -v /tmp/data:/scif/data -p 80:80 vanessa/{{ page.tag }} start
 
 
 # Here is the command to generate your Dockerfile (3rd step)

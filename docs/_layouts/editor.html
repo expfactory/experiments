@@ -28,8 +28,19 @@ layout: default
 
                 {{ content }}
 
-             <div id="textarea">
-                {% include generator_recipe.html %}
+             <div id="textarea"><br>
+             #!/bin/bash<br><br>
+
+             # Run this command to generate the Dockerfile that builds your container.<br>
+             # Container        : docker<br>
+
+             # List experiments : docker run vanessa/expfactory-builder list<br>
+             # Options          : docker run vanessa/expfactory-builder build --help<br>
+             # Make Dockerfile  : docker run -v /tmp/my-experiment:/data vanessa/expfactory-builder build [experiment1 .. experimentn]<br>
+             # Build Dockerfile : docker build -t vanessa/{{ page.tag }} .<br>
+             # Run container    : docker run -v /tmp/data:/scif/data -p 80:80 vanessa/{{ page.tag }} start<br><br>
+
+             # Here is the command to generate your Dockerfile (3rd step)<br>
              <br><br>
             </div>
          
@@ -182,14 +193,16 @@ $(function() {
     } else {
        var experiments = JSON.parse(experiments)
        var length = Object.keys(experiments).length;
-       showMessage("You have " + length + " experiment added to your container recipe!" );
-       $.each(experiments,function(name, github){
+       showMessage("You have " + length + " experiment added for install" );
+       var command = "docker run -v /tmp/data:/data vanessa/expfactory-builder build "
 
-           add_text(editor, "LABEL EXPFACTORY_" + name + " /scif/apps/" + name);
-           add_text(editor,"WORKDIR /scif/apps");
-           add_text(editor,"RUN expfactory install " + github);
-           add_text(editor,"");
+       $.each(experiments,function(name, github){
+           command = command + " " + name;
        })
+
+       add_text(editor,command);
+       add_text(editor,"");
+
    }
        
   });
