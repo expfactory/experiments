@@ -40,8 +40,8 @@ ENTRYPOINT ["/bin/bash", "/startscript.sh"]
 EXPOSE 5000
 EXPOSE 80
 
-{% for exp in site.library %}{% assign name = page.title | downcase %}
-LABEL EXPERIMENT_{{ exp.name }} /scif/apps/{{ exp.name }}
+{% for exp in site.library %}{% assign name = page.title | downcase %}{% if exp.tags contains page.tag %}
+LABEL EXPFACTORY_{{ exp.name }} /scif/apps/{{ exp.name }}
 WORKDIR /scif/apps
 RUN expfactory install {{ exp.github }}
-{% endfor %}
+{% endif %}{% endfor %}

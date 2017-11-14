@@ -27,7 +27,7 @@ collections:
     permalink: /e/:title/
   recipes:
     output: true
-    permalink: /r/Singularity.:title/
+    permalink: /r/:title/
     values:
       layout: "recipe.html"
 

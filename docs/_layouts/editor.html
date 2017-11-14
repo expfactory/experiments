@@ -133,16 +133,16 @@ $(function() {
             var text = $('.ql-editor').html().replace('<p>','').replaceAll('&amp;','&') // First line
             var text = text.replaceAll('<p></p>','\n').replaceAll('<p>','\n').replaceAll('<\p>','\n').replaceAll('<br>','\n')
             var text = text.replace(/(<([^>]+)>)/g, "");
-            download('Singularity', text)
+            download('{{ page.recipe }}', text)
     });
 
     function download(recipe, text){
         resetMessage();
-        zip.file("Singularity", text);
+        zip.file("{{ page.recipe }}", text);
         zip.file("README.md", urlToPromise("{{ site.baseurl }}/README"), {binary:true});
         zip.generateAsync({type:"blob"}).then(function callback(blob) {
             // see FileSaver.js
-            saveAs(blob, "Singularity.expfactory.zip");
+            saveAs(blob, "{{ page.recipe }}.expfactory.zip");
             showMessage("Download of recipe and supporting files complete.");
 
         }, function (e) {
@@ -185,7 +185,7 @@ $(function() {
        showMessage("You have " + length + " experiment added to your container recipe!" );
        $.each(experiments,function(name, github){
 
-           add_text(editor, "LABEL EXPERIMENT_" + name + " /scif/apps/" + name);
+           add_text(editor, "LABEL EXPFACTORY_" + name + " /scif/apps/" + name);
            add_text(editor,"WORKDIR /scif/apps");
            add_text(editor,"RUN expfactory install " + github);
            add_text(editor,"");
