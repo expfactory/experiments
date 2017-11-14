@@ -1,6 +1,9 @@
+<br>
 #!/bin/bash
 
+# Run this command to generate the Dockerfile that builds your container.
 # Container        : {{ page.base }}
+# Tag              : {{ page.tag }}
 
 # List experiments : docker run -v $PWD:/data vanessa/expfactory-builder list
 # Build options    : docker run -v $PWD:/data vanessa/expfactory-builder build [experiment1 .. experimentn]

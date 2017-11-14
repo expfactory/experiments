@@ -139,16 +139,16 @@ $(function() {
             var text = $('.ql-editor').html().replace('<p>','').replaceAll('&amp;','&') // First line
             var text = text.replaceAll('<p></p>','\n').replaceAll('<p>','\n').replaceAll('<\p>','\n').replaceAll('<br>','\n')
             var text = text.replace(/(<([^>]+)>)/g, "");
-            download('Dockerfile', text)
+            download('expfactory-generate.sh', text)
     });
 
     function download(recipe, text){
         resetMessage();
-        zip.file("Dockerfile", text);
+        zip.file("expfactory-generate.sh", text);
         zip.generateAsync({type:"blob"}).then(function callback(blob) {
 
             // see FileSaver.js
-            saveAs(blob, "Dockerfile.{{ page.tag }}.zip");
+            saveAs(blob, "expfactory.{{ page.tag }}.zip");
             showMessage("Download of recipe and supporting files complete.");
 
         }, function (e) {
