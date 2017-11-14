@@ -5,8 +5,13 @@
 # Container        : {{ page.base }}
 # Tag              : {{ page.tag }}
 
-# List experiments : docker run vanessa/expfactory-builder list
-# Build options    : docker run vanessa/expfactory-builder build --help
-# Build            : docker run -v /tmp/my-experiment:/data vanessa/expfactory-builder build [experiment1 .. experimentn]
 
+# List experiments : docker run vanessa/expfactory-builder list
+# Options          : docker run vanessa/expfactory-builder build --help
+# Make Dockerfile  : docker run -v /tmp/my-experiment:/data vanessa/expfactory-builder build [experiment1 .. experimentn]
+# Build Dockerfile : docker build -t vanessa/{{ page.tag }} .
+# Run container    : docker run -v /tmp/data:/scif/data vanessa/{{ page.tag }} start
+
+
+# Here is the command to generate your Dockerfile (3rd step)
 docker run -v $PWD:/data vanessa/expfactory-builder build {% for exp in site.library %}{% assign name = page.title | downcase %}{% if exp.tags contains page.tag %} {{ exp.name }} {% endif %}{% endfor %}
