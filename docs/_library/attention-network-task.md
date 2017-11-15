@@ -1,6 +1,6 @@
 ---
 layout: experiment
-name:  "Attention Network Task"
+name:  "attention-network-task"
 maintainer: "@vsoch"
 github: "https://www.github.com/expfactory-experiments/attention-network-task"
 preview: "https://expfactory-experiments.github.io/attention-network-task"
