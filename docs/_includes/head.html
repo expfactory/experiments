@@ -14,7 +14,7 @@
     <meta name="description" content="Experiment Factory: Reproducible Container Experiments">
     <meta name="thumbnail" content="https://expfactory.github.io{{ site.baseurl }}/img/expfactoryticketyellow.png">
     {% if page.name %}<meta name="name" content="{{ page.name }}">{% endif %}
-    {% if page.tags %}<meta name="tags" content="{% for tag in page.tags %}{{ tag }} {% if forloop.last %}{% else %},{% endif %}{% endfor %}">{% endif %}
+    {% if page.tags %}<meta name="tags" content="{% for tag in page.tags %}{{ tag }}{% if forloop.last %}{% else %},{% endif %}{% endfor %}">{% endif %}
     {% if page.maintainer %}<meta name="author" content="{{ page.maintainer }}">{% endif %}
     {% if page.preview %}<meta name="preview" content="{{ page.preview }}">{% endif %}
     {% if page.github %}<meta name="repository" content="{{ page.github }}">
