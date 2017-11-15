@@ -2,7 +2,7 @@
 layout: experiment
 name:  "motor-selective-stop-signal"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/"motor-selective-stop-signal
+github: "https://www.github.com/expfactory-experiments/motor-selective-stop-signal"
 preview: "https://expfactory-experiments.github.io/motor-selective-stop-signal"
 tags:
 - jspsych
