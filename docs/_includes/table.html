@@ -27,9 +27,9 @@
                     <td data-id="{{ exp.name }}-checkbox"></td>
                     <td>
                         <a href="{{ exp.github }}" target="_blank">
-                           <span class="btn btn-xs btn-info">GITHUB</span></a>
+                           <span class="btn btn-xs btn-primary">GITHUB</span></a>
                         <a href="{{ exp.preview }}" target="_blank">
-                           <span class="btn btn-xs btn-info">DEMO</span></a>
+                           <span class="btn btn-xs btn-primary">DEMO</span></a>
                     </td>
                     <td><a href="{{ site.baseurl }}/e/{{ exp.name }}">{{ exp.name }}</a></td>
                     <td>{% for tag in exp.tags %}{{ tag }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</td>
