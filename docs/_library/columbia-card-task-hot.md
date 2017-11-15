@@ -1,9 +1,9 @@
 ---
 layout: experiment
-name:  "colombia-card-task-hot"
+name:  "columbia-card-task-hot"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/colombia-card-task-hot"
-preview: "https://expfactory-experiments.github.io/colombia-card-task-hot"
+github: "https://www.github.com/expfactory-experiments/columbia-card-task-hot"
+preview: "https://expfactory-experiments.github.io/columbia-card-task-hot"
 tags:
 - jspsych
 - experiment
