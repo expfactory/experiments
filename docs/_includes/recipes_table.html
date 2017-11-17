@@ -15,7 +15,7 @@
         <table id="fresh-table" class="table">
            <thead>
              <th data-field="download" data-sortable="false">view</th>
-             <th data-field="tag" data-sortable="true">tag/name</th>
+             <th data-field="tag" data-sortable="true">name</th>
              <th data-field="bootstrap" data-sortable="true">container</th>
              <th data-field="from" data-sortable="true">from</th>
              <th data-field="maintainer" data-sortable="true">maintainer</th>
@@ -27,7 +27,7 @@
                         <a href="{{ site.baseurl }}/r/{{ recipe.title | downcase }}/" target="_blank">
                            <span class="label label-primary">VIEW</span></a>
                     </td>
-                    <td>{{ recipe.tag }}</td>
+                    <td>{{ recipe.tag }} [tag]</td>
                     <td>{{ recipe.base }}</td>
                     <td>{{ recipe.from }}</td>
                     <td>{{ recipe.maintainer }}</td>
