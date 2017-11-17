@@ -13,3 +13,8 @@
   url: "https://hub.docker.com/r/vanessa/expfactory-surveys/"
   maintainer: "@vsoch"
   description: Example Docker container with all experiment factory surveys
+- name: expfactory-stop-signal
+  base: "docker"
+  url: "https://hub.docker.com/r/vanessa/expfactory-stop-signal/"
+  maintainer: "@vsoch"
+  description: Docker container with three variants of the stop signal task
