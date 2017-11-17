@@ -33,6 +33,19 @@
                     <td>{{ recipe.maintainer }}</td>
                 </tr>
                 {% endfor %}
+
+                {% for recipe in site.data.containers %}
+                 <tr>
+                    <td>
+                        <a href="{{ recipe.url }}" target="_blank">
+                           <span class="label label-primary">VIEW</span></a>
+                    </td>
+                    <td>container</td>
+                    <td>{{ recipe.base }}</td>
+                    <td></td>
+                    <td>{{ recipe.maintainer }}</td>
+                </tr>
+                {% endfor %}
               </tbody>
           </table>
     </div>

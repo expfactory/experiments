@@ -1,0 +1,15 @@
+- name: expfactory-games
+  base: "docker"
+  url: "https://hub.docker.com/r/vanessa/expfactory-games/"
+  maintainer: "@vsoch"
+  description: Example Docker container with all experiment factory (phaser) games
+- name: expfactory-games
+  base: "docker"
+  url: "https://hub.docker.com/r/vanessa/expfactory-experiments/"
+  maintainer: "@vsoch"
+  description: Example Docker container with all experiment factory (jspsych) experiments  
+- name: expfactory-surveys
+  base: "docker"
+  url: "https://hub.docker.com/r/vanessa/expfactory-surveys/"
+  maintainer: "@vsoch"
+  description: Example Docker container with all experiment factory surveys
