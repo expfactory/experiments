@@ -10,14 +10,14 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: circleci-docs-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: circleci-docs-{{ .Branch }}-{{ checksum "Gemfile" }}
       - run:
           name: Install Ruby dependencies
           command: |
             cd docs
             bundle install --path=vendor/bundle --jobs=4 --retry=3
       - save_cache:
-          key: circleci-docs-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: circleci-docs-{{ .Branch }}-{{ checksum "Gemfile" }}
           paths:
             - "vendor/bundle"
       - run:
@@ -33,6 +33,8 @@ jobs:
             cd /tmp && git clone https://github.com/expfactory/expfactory.git
             cd /tmp/expfactory && $HOME/miniconda3/bin/python setup.py install
             $HOME/miniconda3/bin/python -m pip install pyaml
+            cd $HOME/circleci-docs/docs
+            $HOME/miniconda3/bin/python ../tests/circle_urls.py $HOME/circleci-docs/docs/_site
       - run:
           name: "Test Expfactory Library"
           command: |
