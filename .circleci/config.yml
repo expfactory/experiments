@@ -44,7 +44,7 @@ jobs:
           path: docs/_site
           destination: circleci-docs
       - persist_to_workspace:
-          root: ~/circleci-docs/_site 
+          root: ~/circleci-docs/docs/_site 
           paths: 
             - docs
   deploy:
