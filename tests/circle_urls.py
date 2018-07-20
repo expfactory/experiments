@@ -25,6 +25,6 @@ for html_file in files:
     for search_name in search_names:
         content = content.replace('%s"' %(search_name),'%s.html"' %(search_name))
     # Circle PR number is part of the URL
-    content = content.replace('/experiments/', '/%s/experiments' %circle_pr_number)
+    content = content.replace('/experiments/', '/%s/experiments/' %circle_pr_number)
     with open(html_file,'w') as filey:
         filey.write(content)
