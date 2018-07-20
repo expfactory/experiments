@@ -26,16 +26,16 @@ jobs:
             cd docs
             bundle exec jekyll build
       - run:
-          name: "Test Expfactory Library"
+          name: "Install Expfactory"
           command: |
             wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
             /bin/bash Miniconda3-latest-Linux-x86_64.sh -b 
             cd /tmp && git clone https://github.com/expfactory/expfactory.git
             cd /tmp/expfactory && $HOME/miniconda3/bin/python setup.py install
             $HOME/miniconda3/bin/python -m pip install pyaml
-            #cd $HOME/experiments/docs && bundle install
-            #cd $HOME/experiments/docs && bundle exec jekyll build
-            #cd $HOME/experiments/docs && $HOME/miniconda3/bin/python ../tests/circle_urls.py $HOME/experiments/docs/_site
+      - run:
+          name: "Test Expfactory Library"
+          command: |
             echo "The Experiment Factory!"
             cd $HOME/circleci-docs && $HOME/miniconda3/bin/python -m unittest tests.test_library
             echo "Previewing Library Metadata"
@@ -44,7 +44,7 @@ jobs:
           path: docs/_site
           destination: circleci-docs
       - persist_to_workspace:
-          root: ~/circleci-docs/docs/_site 
+          root: ~/circleci-docs/_site 
           paths: 
             - docs
   deploy:
