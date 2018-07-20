@@ -43,10 +43,6 @@ jobs:
       - store_artifacts: 
           path: docs/_site
           destination: circleci-docs
-      - persist_to_workspace:
-          root: ~/circleci-docs/docs/_site 
-          paths: 
-            - docs
   deploy:
     docker:
       - image: cibuilds/aws:1.15.44
