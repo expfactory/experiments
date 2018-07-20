@@ -15,7 +15,7 @@ print("Using site directory %s" %(site_dir))
 files = glob("%s/*.html" %(site_dir))
 
 # Circle PR number is part of the URL
-circle_pr_number = os.environ['CIRCLE_PR_NUMBER']
+circle_pr_number = os.environ.get('CIRCLE_PR_NUMBER','0')
 
 # For each file, we need to replace all links to have correct .html extension
 search_names = [os.path.basename(f).replace('.html','') for f in files]
