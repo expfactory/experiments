@@ -25,17 +25,8 @@ jobs:
           name: Create results directory
           command: mkdir -p $JOB_RESULTS_PATH
       - run:
-          name: "Manage Data Files We'll Need"
-          command: |
-            # cp jekyll/_data/trusty/versions.json jekyll/environments/trusty.json
-            cp jekyll/_data/trusty/versions-ubuntu-14_04-XXL.json jekyll/environments/ubuntu-14.04-XXL.json
-            ./scripts/pull-docker-image-tags.sh
-      - run:
           name: Build the Jekyll site
-          command: bundle exec jekyll build --config jekyll/_config.yml,jekyll/_config_production.yml --source jekyll --destination jekyll/_site/docs/ 2>&1 | tee $JOB_RESULTS_PATH/build-results.txt
-      - run:
-          name: Test with HTMLproofer
-          command: bundle exec htmlproofer jekyll/_site --allow-hash-href --check-favicon --check-html --disable-external --empty-alt-ignore | tee $JOB_RESULTS_PATH/htmlproofer-results.txt
+          command: bundle exec jekyll build
       - run:
           name: "Test Expfactory Library"
           command: |
@@ -44,25 +35,18 @@ jobs:
             cd /tmp && git clone https://github.com/expfactory/expfactory.git
             cd /tmp/expfactory && $HOME/miniconda3/bin/python setup.py install
             $HOME/miniconda3/bin/python -m pip install pyaml
-            #rvm --ruby-version use 2.3.1
-            echo "PWD is $PWD"
-            ls
             #cd $HOME/experiments/docs && bundle install
             #cd $HOME/experiments/docs && bundle exec jekyll build
             #cd $HOME/experiments/docs && $HOME/miniconda3/bin/python ../tests/circle_urls.py $HOME/experiments/docs/_site
             echo "The Experiment Factory!"
-            cd $HOME/experiments && $HOME/miniconda3/bin/python -m unittest tests.test_library
+            cd $HOME/circleci-docs && $HOME/miniconda3/bin/python -m unittest tests.test_library
             echo "Previewing Library Metadata"
-            cat jekyll/_site/library.json
-            cat $HOME/experiments/docs/_site/library.json
+            cat docs/_site/library.json
       - store_artifacts: 
-          path: jekyll/_site/docs/
+          path: docs/_site
           destination: circleci-docs
-      - store_artifacts: 
-          path: run-results/
-          destination: run-results
       - persist_to_workspace:
-          root: ~/circleci-docs/jekyll/_site 
+          root: ~/circleci-docs/docs/_site 
           paths: 
             - docs
   deploy:
