@@ -82,14 +82,25 @@ class TestLibrary(TestCase):
         experiments = glob("%s/*" %self.experiments_base)
 
         compare_url = os.environ.get("CIRCLE_COMPARE_URL")
+
+        # If the variable exists, we are running on Circle
         if compare_url is not None:
             print('Detected running in Circle CI')
-            compare_url = "%s.patch" % compare_url
-            print("Compare URL: %s" %compare_url)
-            response = requests.get(compare_url) 
-            if response.status_code == 200:
-                experiments = set(re.findall(' docs/_library/.+[.]md',response.text))
-                experiments = [x.strip() for x in experiments]        
+
+            # If defined, derive change list from compare url
+            if compare_url != '':
+
+                compare_url = "%s.patch" % compare_url
+                print("Compare URL: %s" %compare_url)
+                response = requests.get(compare_url) 
+                if response.status_code == 200:
+                    experiments = set(re.findall(' docs/_library/.+[.]md', response.text))
+                    experiments = [x.strip() for x in experiments]        
+
+            # Otherwise, use all experiments
+            else:
+                print("No compare URL detected, using entire listing.")
+                experiments = glob('%s/*.md' % self.experiments_base)
         else:
             print("Not running in Circle Ci")
 
