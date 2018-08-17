@@ -1,6 +1,6 @@
 ---
 layout: experiment
-name:  "state-mindfulness-survey"
+name:  "meditation-expertise"
 maintainer: "@earcanal"
 github: "https://github.com/earcanal/meditation-expertise"
 preview: "https://expfactory-experiments.github.io/meditation-expertise"
