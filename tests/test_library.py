@@ -55,6 +55,7 @@ from expfactory.validator import (
     ExperimentValidator,
     RuntimeValidator
 )
+import unittest
 from unittest import TestCase
 
 VERSION = sys.version_info[0]
