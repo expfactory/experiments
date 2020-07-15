@@ -1,9 +1,9 @@
 ---
 layout: experiment
-name:  "reward_learning"
+name:  "reward-learning-task"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/reward_learning_js"
-preview: "https://expfactory-experiments.github.io/reward_learning_js"
+github: "https://www.github.com/expfactory-experiments/reward-learning-task"
+preview: "https://expfactory-experiments.github.io/reward-learning-task"
 tags:
 - jspsych
 - experiment
