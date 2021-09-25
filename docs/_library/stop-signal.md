@@ -2,7 +2,7 @@
 layout: experiment
 name:  "stop-signal"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/stop-signal"
+github: "https://github.com/expfactory-experiments/stop-signal"
 preview: "https://expfactory-experiments.github.io/stop-signal"
 tags:
 - jspsych

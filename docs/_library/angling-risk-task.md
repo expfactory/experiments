@@ -2,7 +2,7 @@
 layout: experiment
 name:  "angling-risk-task"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/angling-risk-task"
+github: "https://github.com/expfactory-experiments/angling-risk-task"
 preview: "https://expfactory-experiments.github.io/angling-risk-task"
 tags:
 - risk

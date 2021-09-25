@@ -2,7 +2,7 @@
 layout: experiment
 name:  "future-time-perspective-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/future-time-perspective-survey"
+github: "https://github.com/expfactory-experiments/future-time-perspective-survey"
 preview: "https://expfactory-experiments.github.io/future-time-perspective-survey"
 tags:
 - survey

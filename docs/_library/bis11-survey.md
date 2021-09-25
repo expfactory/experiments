@@ -2,7 +2,7 @@
 layout: experiment
 name:  "bis11-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/bis11-survey"
+github: "https://github.com/expfactory-experiments/bis11-survey"
 preview: "https://expfactory-experiments.github.io/bis11-survey"
 tags:
 - survey

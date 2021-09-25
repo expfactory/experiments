@@ -2,7 +2,7 @@
 layout: experiment
 name:  "n-back"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/n-back"
+github: "https://github.com/expfactory-experiments/n-back"
 preview: "https://expfactory-experiments.github.io/n-back"
 tags:
 - jspsych

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "bucket-game"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/bucket-game"
+github: "https://github.com/expfactory-experiments/bucket-game"
 preview: "https://expfactory-experiments.github.io/bucket-game"
 tags:
 - phaser

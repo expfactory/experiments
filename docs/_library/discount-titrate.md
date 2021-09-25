@@ -2,7 +2,7 @@
 layout: experiment
 name:  "discount-titrate"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/discount-titrate"
+github: "https://github.com/expfactory-experiments/discount-titrate"
 preview: "https://expfactory-experiments.github.io/discount-titrate"
 tags:
 - jspsych

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "five-facet-mindfulness-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/five-facet-mindfulness-survey"
+github: "https://github.com/expfactory-experiments/five-facet-mindfulness-survey"
 preview: "https://expfactory-experiments.github.io/five-facet-mindfulness-survey"
 tags:
 - mindfulness

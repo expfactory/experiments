@@ -2,7 +2,7 @@
 layout: experiment
 name:  "grid-game"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/grid-game"
+github: "https://github.com/expfactory-experiments/grid-game"
 preview: "https://expfactory-experiments.github.io/grid-game"
 tags:
 - phaser

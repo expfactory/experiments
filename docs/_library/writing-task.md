@@ -2,7 +2,7 @@
 layout: experiment
 name:  "writing-task"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/writing-task"
+github: "https://github.com/expfactory-experiments/writing-task"
 preview: "https://expfactory-experiments.github.io/writing-task"
 tags:
 - jspsych

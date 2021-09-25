@@ -2,7 +2,7 @@
 layout: experiment
 name:  "grit-scale-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/grit-scale-survey"
+github: "https://github.com/expfactory-experiments/grit-scale-survey"
 preview: "https://expfactory-experiments.github.io/grit-scale-survey"
 tags:
 - survey

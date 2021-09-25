@@ -2,7 +2,7 @@
 layout: experiment
 name:  "willingness-to-wait"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/willingness-to-wait"
+github: "https://github.com/expfactory-experiments/willingness-to-wait"
 preview: "https://expfactory-experiments.github.io/willingness-to-wait"
 tags:
 - jspsych

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "shift-task"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/shift-task"
+github: "https://github.com/expfactory-experiments/shift-task"
 preview: "https://expfactory-experiments.github.io/shift-task"
 tags:
 - jspsych

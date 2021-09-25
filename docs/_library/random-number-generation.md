@@ -2,7 +2,7 @@
 layout: experiment
 name:  "random-number-generation"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/random-number-generation"
+github: "https://github.com/expfactory-experiments/random-number-generation"
 preview: "https://expfactory-experiments.github.io/random-number-generation"
 tags:
 - jspsych

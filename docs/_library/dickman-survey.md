@@ -2,7 +2,7 @@
 layout: experiment
 name:  "dickman-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/dickman-survey"
+github: "https://github.com/expfactory-experiments/dickman-survey"
 preview: "https://expfactory-experiments.github.io/dickman-survey"
 tags:
 - survey

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "number-letter"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/number-letter"
+github: "https://github.com/expfactory-experiments/number-letter"
 preview: "https://expfactory-experiments.github.io/number-letter"
 tags:
 - jspsych

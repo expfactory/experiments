@@ -2,7 +2,7 @@
 layout: experiment
 name:  "two-stage-decision"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/two-stage-decision"
+github: "https://github.com/expfactory-experiments/two-stage-decision"
 preview: "https://expfactory-experiments.github.io/two-stage-decision"
 tags:
 - jspsych

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "eating-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/eating-survey"
+github: "https://github.com/expfactory-experiments/eating-survey"
 preview: "https://expfactory-experiments.github.io/eating-survey"
 tags:
 - survey

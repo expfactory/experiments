@@ -2,7 +2,7 @@
 layout: experiment
 name:  "theories-of-willpower-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/theories-of-willpower-survey"
+github: "https://github.com/expfactory-experiments/theories-of-willpower-survey"
 preview: "https://expfactory-experiments.github.io/theories-of-willpower-survey"
 tags:
 - survey

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "recent-probes"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/recent-probes"
+github: "https://github.com/expfactory-experiments/recent-probes"
 preview: "https://expfactory-experiments.github.io/recent-probes"
 tags:
 - jspsych

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "bickel-titrator"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/bickel-titrator"
+github: "https://github.com/expfactory-experiments/bickel-titrator"
 preview: "https://expfactory-experiments.github.io/bickel-titrator"
 tags:
 - jspsych

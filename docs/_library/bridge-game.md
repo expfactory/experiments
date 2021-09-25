@@ -2,7 +2,7 @@
 layout: experiment
 name:  "bridge-game"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/bridge-game"
+github: "https://github.com/expfactory-experiments/bridge-game"
 preview: "https://expfactory-experiments.github.io/bridge-game"
 tags:
 - phaser

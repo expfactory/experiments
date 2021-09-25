@@ -2,7 +2,7 @@
 layout: experiment
 name:  "ravens"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/ravens"
+github: "https://github.com/expfactory-experiments/ravens"
 preview: "https://expfactory-experiments.github.io/ravens"
 tags:
 - jspsych

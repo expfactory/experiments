@@ -2,7 +2,7 @@
 layout: experiment
 name:  "k6-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/k6-survey"
+github: "https://github.com/expfactory-experiments/k6-survey"
 preview: "https://expfactory-experiments.github.io/k6-survey"
 tags:
 - survey

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "digit-span"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/digit-span"
+github: "https://github.com/expfactory-experiments/digit-span"
 preview: "https://expfactory-experiments.github.io/digit-span"
 tags:
 - memory

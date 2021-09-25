@@ -2,7 +2,7 @@
 layout: experiment
 name:  "dot-pattern-expectancy"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/dot-pattern-expectancy"
+github: "https://github.com/expfactory-experiments/dot-pattern-expectancy"
 preview: "https://expfactory-experiments.github.io/dot-pattern-expectancy"
 tags:
 - jspsych

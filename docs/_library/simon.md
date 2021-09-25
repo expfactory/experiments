@@ -2,7 +2,7 @@
 layout: experiment
 name:  "simon"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/simon"
+github: "https://github.com/expfactory-experiments/simon"
 preview: "https://expfactory-experiments.github.io/simon"
 tags:
 - jspsych

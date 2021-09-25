@@ -2,7 +2,7 @@
 layout: experiment
 name:  "tower-of-london-imagine"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/tower-of-london-imagine"
+github: "https://github.com/expfactory-experiments/tower-of-london-imagine"
 preview: "https://expfactory-experiments.github.io/tower-of-london-imagine"
 tags:
 - jspsych

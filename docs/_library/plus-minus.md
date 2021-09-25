@@ -2,7 +2,7 @@
 layout: experiment
 name:  "plus-minus"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/plus-minus"
+github: "https://github.com/expfactory-experiments/plus-minus"
 preview: "https://expfactory-experiments.github.io/plus-minus"
 tags:
 - jspsych

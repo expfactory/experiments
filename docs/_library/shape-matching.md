@@ -2,7 +2,7 @@
 layout: experiment
 name:  "shape-matching"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/shape-matching"
+github: "https://github.com/expfactory-experiments/shape-matching"
 preview: "https://expfactory-experiments.github.io/shape-matching"
 tags:
 - jspsych

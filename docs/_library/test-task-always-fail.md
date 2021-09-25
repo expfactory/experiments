@@ -2,7 +2,7 @@
 layout: experiment
 name:  "test-task-always-fail"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/test-task-always-fail"
+github: "https://github.com/expfactory-experiments/test-task-always-fail"
 preview: "https://expfactory-experiments.github.io/test-task-always-fail"
 tags:
 - jspsych

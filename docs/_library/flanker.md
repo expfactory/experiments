@@ -2,7 +2,7 @@
 layout: experiment
 name:  "flanker"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/flanker"
+github: "https://github.com/expfactory-experiments/flanker"
 preview: "https://expfactory-experiments.github.io/flanker"
 tags:
 - jspsych

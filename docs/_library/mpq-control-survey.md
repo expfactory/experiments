@@ -2,7 +2,7 @@
 layout: experiment
 name:  "mpq-control-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/mpq-control-survey"
+github: "https://github.com/expfactory-experiments/mpq-control-survey"
 preview: "https://expfactory-experiments.github.io/mpq-control-survey"
 tags:
 - survey

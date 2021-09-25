@@ -2,7 +2,7 @@
 layout: experiment
 name:  "threebytwo"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/threebytwo"
+github: "https://github.com/expfactory-experiments/threebytwo"
 preview: "https://expfactory-experiments.github.io/threebytwo"
 tags:
 - jspsych

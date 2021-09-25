@@ -2,7 +2,7 @@
 layout: experiment
 name:  "multisource"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/multisource"
+github: "https://github.com/expfactory-experiments/multisource"
 preview: "https://expfactory-experiments.github.io/multisource"
 tags:
 - jspsych

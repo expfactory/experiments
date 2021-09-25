@@ -2,7 +2,7 @@
 layout: experiment
 name:  "stroop-5min"
 maintainer: "@tylerburleigh"
-github: "https://www.github.com/expfactory-experiments/stroop-5min"
+github: "https://github.com/expfactory-experiments/stroop-5min"
 preview: "https://expfactory-experiments.github.io/stroop-5min"
 tags:
 - jspsych

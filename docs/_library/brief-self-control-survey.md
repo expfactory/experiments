@@ -2,7 +2,7 @@
 layout: experiment
 name:  "brief-self-control-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/brief-self-control-survey"
+github: "https://github.com/expfactory-experiments/brief-self-control-survey"
 preview: "https://expfactory-experiments.github.io/brief-self-control-survey"
 tags:
 - survey

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "choice-reaction-time"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/choice-reaction-time"
+github: "https://github.com/expfactory-experiments/choice-reaction-time"
 preview: "https://expfactory-experiments.github.io/choice-reaction-time"
 tags:
 - jspsych

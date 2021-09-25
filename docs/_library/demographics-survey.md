@@ -2,7 +2,7 @@
 layout: experiment
 name:  "demographics-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/demographics-survey"
+github: "https://github.com/expfactory-experiments/demographics-survey"
 preview: "https://expfactory-experiments.github.io/demographics-survey"
 tags:
 - survey

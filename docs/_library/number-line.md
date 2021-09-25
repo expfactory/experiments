@@ -2,7 +2,7 @@
 layout: experiment
 name:  "number-line"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/number-line"
+github: "https://github.com/expfactory-experiments/number-line"
 preview: "https://expfactory-experiments.github.io/number-line"
 tags:
 - phaser

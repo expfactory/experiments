@@ -2,7 +2,7 @@
 layout: experiment
 name:  "self-regulation-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/self-regulation-survey"
+github: "https://github.com/expfactory-experiments/self-regulation-survey"
 preview: "https://expfactory-experiments.github.io/self-regulation-survey"
 tags:
 - survey

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "whats-missing-lightning"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/whats-missing-lightning"
+github: "https://github.com/expfactory-experiments/whats-missing-lightning"
 preview: "https://expfactory-experiments.github.io/whats-missing-lightning"
 tags:
 - phaser

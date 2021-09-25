@@ -2,7 +2,7 @@
 layout: experiment
 name:  "stroop"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/stroop"
+github: "https://github.com/expfactory-experiments/stroop"
 preview: "https://expfactory-experiments.github.io/stroop"
 tags:
 - jspsych

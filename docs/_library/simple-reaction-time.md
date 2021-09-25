@@ -2,7 +2,7 @@
 layout: experiment
 name:  "simple-reaction-time"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/simple-reaction-time"
+github: "https://github.com/expfactory-experiments/simple-reaction-time"
 preview: "https://expfactory-experiments.github.io/simple-reaction-time"
 tags:
 - jspsych

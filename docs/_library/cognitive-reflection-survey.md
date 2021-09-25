@@ -2,7 +2,7 @@
 layout: experiment
 name:  "cognitive-reflection-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/cognitive-reflection-survey"
+github: "https://github.com/expfactory-experiments/cognitive-reflection-survey"
 preview: "https://expfactory-experiments.github.io/cognitive-reflection-survey"
 tags:
 - survey

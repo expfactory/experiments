@@ -2,7 +2,7 @@
 layout: experiment
 name:  "angling-risk-task-always-sunny"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/angling-risk-task-always-sunny"
+github: "https://github.com/expfactory-experiments/angling-risk-task-always-sunny"
 preview: "https://expfactory-experiments.github.io/angling-risk-task-always-sunny"
 tags:
 - risk
