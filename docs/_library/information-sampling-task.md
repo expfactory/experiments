@@ -2,7 +2,7 @@
 layout: experiment
 name:  "information-sampling-task"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/information-sampling-task"
+github: "https://github.com/expfactory-experiments/information-sampling-task"
 preview: "https://expfactory-experiments.github.io/information-sampling-task"
 tags:
 - jspsych

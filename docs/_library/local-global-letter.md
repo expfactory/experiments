@@ -2,7 +2,7 @@
 layout: experiment
 name:  "local-global-letter"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/local-global-letter"
+github: "https://github.com/expfactory-experiments/local-global-letter"
 preview: "https://expfactory-experiments.github.io/local-global-letter"
 tags:
 - jspsych

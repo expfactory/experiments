@@ -2,7 +2,7 @@
 layout: experiment
 name:  "local-global-shape"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/local-global-shape"
+github: "https://github.com/expfactory-experiments/local-global-shape"
 preview: "https://expfactory-experiments.github.io/local-global-shape"
 tags:
 - jspsych

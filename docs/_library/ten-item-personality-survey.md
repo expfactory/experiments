@@ -2,7 +2,7 @@
 layout: experiment
 name:  "ten-item-personality-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/ten-item-personality-survey"
+github: "https://github.com/expfactory-experiments/ten-item-personality-survey"
 preview: "https://expfactory-experiments.github.io/ten-item-personality-survey"
 tags:
 - survey

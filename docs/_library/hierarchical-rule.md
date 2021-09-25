@@ -2,7 +2,7 @@
 layout: experiment
 name:  "hierarchical-rule"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/hierarchical-rule"
+github: "https://github.com/expfactory-experiments/hierarchical-rule"
 preview: "https://expfactory-experiments.github.io/hierarchical-rule"
 tags:
 - jspsych

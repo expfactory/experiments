@@ -2,7 +2,7 @@
 layout: experiment
 name:  "add-it-up-zen"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/add-it-up-zen"
+github: "https://github.com/expfactory-experiments/add-it-up-zen"
 preview: "https://expfactory-experiments.github.io/add-it-up-zen"
 tags:
 - phaser

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "is-it-equal-zen"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/is-it-equal-zen"
+github: "https://github.com/expfactory-experiments/is-it-equal-zen"
 preview: "https://expfactory-experiments.github.io/is-it-equal-zen"
 tags:
 - phaser

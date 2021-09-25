@@ -2,7 +2,7 @@
 layout: experiment
 name:  "stim-selective-stop-signal"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/stim-selective-stop-signal"
+github: "https://github.com/expfactory-experiments/stim-selective-stop-signal"
 preview: "https://expfactory-experiments.github.io/stim-selective-stop-signal"
 tags:
 - jspsych

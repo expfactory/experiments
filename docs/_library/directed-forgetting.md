@@ -2,7 +2,7 @@
 layout: experiment
 name:  "directed-forgetting"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/directed-forgetting"
+github: "https://github.com/expfactory-experiments/directed-forgetting"
 preview: "https://expfactory-experiments.github.io/directed-forgetting"
 tags:
 - jspsych

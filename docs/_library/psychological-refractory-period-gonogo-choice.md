@@ -2,7 +2,7 @@
 layout: experiment
 name:  "psychological-refractory-period-gonogo-choice"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/psychological-refractory-period-gonogo-choice"
+github: "https://github.com/expfactory-experiments/psychological-refractory-period-gonogo-choice"
 preview: "https://expfactory-experiments.github.io/psychological-refractory-period-gonogo-choice"
 tags:
 - jspsych

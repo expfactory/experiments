@@ -2,7 +2,7 @@
 layout: experiment
 name:  "impulsive-venture-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/impulsive-venture-survey"
+github: "https://github.com/expfactory-experiments/impulsive-venture-survey"
 preview: "https://expfactory-experiments.github.io/impulsive-venture-survey"
 tags:
 - survey

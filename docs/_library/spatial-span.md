@@ -2,7 +2,7 @@
 layout: experiment
 name:  "spatial-span"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/spatial-span"
+github: "https://github.com/expfactory-experiments/spatial-span"
 preview: "https://expfactory-experiments.github.io/spatial-span"
 tags:
 - memory

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "dietary-decision"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/dietary-decision"
+github: "https://github.com/expfactory-experiments/dietary-decision"
 preview: "https://expfactory-experiments.github.io/dietary-decision"
 tags:
 - jspsych

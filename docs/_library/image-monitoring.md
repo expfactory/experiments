@@ -2,7 +2,7 @@
 layout: experiment
 name:  "image-monitoring"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/image-monitoring"
+github: "https://github.com/expfactory-experiments/image-monitoring"
 preview: "https://expfactory-experiments.github.io/image-monitoring"
 tags:
 - jspsych

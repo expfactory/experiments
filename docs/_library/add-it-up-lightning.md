@@ -2,7 +2,7 @@
 layout: experiment
 name:  "add-it-up-lightning"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/add-it-up-lightning"
+github: "https://github.com/expfactory-experiments/add-it-up-lightning"
 preview: "https://expfactory-experiments.github.io/add-it-up-lightning"
 tags:
 - phaser

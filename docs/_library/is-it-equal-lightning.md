@@ -2,7 +2,7 @@
 layout: experiment
 name:  "is-it-equal-lightning"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/is-it-equal-lightning"
+github: "https://github.com/expfactory-experiments/is-it-equal-lightning"
 preview: "https://expfactory-experiments.github.io/is-it-equal-lightning"
 tags:
 - phaser

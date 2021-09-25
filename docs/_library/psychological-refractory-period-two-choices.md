@@ -2,7 +2,7 @@
 layout: experiment
 name:  "psychological-refractory-period-two-choices"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/psychological-refractory-period-two-choices"
+github: "https://github.com/expfactory-experiments/psychological-refractory-period-two-choices"
 preview: "https://expfactory-experiments.github.io/psychological-refractory-period-two-choices"
 tags:
 - jspsych

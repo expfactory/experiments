@@ -2,7 +2,7 @@
 layout: experiment
 name:  "selection-optimization-compensation-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/selection-optimization-compensation-survey"
+github: "https://github.com/expfactory-experiments/selection-optimization-compensation-survey"
 preview: "https://expfactory-experiments.github.io/selection-optimization-compensation-survey"
 tags:
 - survey

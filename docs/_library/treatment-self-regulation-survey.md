@@ -2,7 +2,7 @@
 layout: experiment
 name:  "treatment-self-regulation-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/treatment-self-regulation-survey"
+github: "https://github.com/expfactory-experiments/treatment-self-regulation-survey"
 preview: "https://expfactory-experiments.github.io/treatment-self-regulation-survey"
 tags:
 - survey

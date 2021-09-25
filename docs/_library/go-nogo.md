@@ -2,7 +2,7 @@
 layout: experiment
 name:  "go-nogo"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/go-nogo"
+github: "https://github.com/expfactory-experiments/go-nogo"
 preview: "https://expfactory-experiments.github.io/go-nogo"
 tags:
 - jspsych

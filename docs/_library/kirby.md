@@ -2,7 +2,7 @@
 layout: experiment
 name:  "kirby"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/kirby"
+github: "https://github.com/expfactory-experiments/kirby"
 preview: "https://expfactory-experiments.github.io/kirby"
 tags:
 - jspsych

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "letter-memory"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/letter-memory"
+github: "https://github.com/expfactory-experiments/letter-memory"
 preview: "https://expfactory-experiments.github.io/letter-memory"
 tags:
 - jspsych

@@ -2,7 +2,7 @@
 layout: experiment
 name:  "volatile-bandit"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/volatile-bandit"
+github: "https://github.com/expfactory-experiments/volatile-bandit"
 preview: "https://expfactory-experiments.github.io/volatile-bandit"
 tags:
 - jspsych

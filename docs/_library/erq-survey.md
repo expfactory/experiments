@@ -2,7 +2,7 @@
 layout: experiment
 name:  "erq-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/erq-survey"
+github: "https://github.com/expfactory-experiments/erq-survey"
 preview: "https://expfactory-experiments.github.io/erq-survey"
 tags:
 - survey

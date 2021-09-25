@@ -2,7 +2,7 @@
 layout: experiment
 name:  "columbia-card-task-hot"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/columbia-card-task-hot"
+github: "https://github.com/expfactory-experiments/columbia-card-task-hot"
 preview: "https://expfactory-experiments.github.io/columbia-card-task-hot"
 tags:
 - jspsych

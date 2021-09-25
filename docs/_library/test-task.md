@@ -2,7 +2,7 @@
 layout: experiment
 name:  "test-task"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/test-task"
+github: "https://github.com/expfactory-experiments/test-task"
 preview: "https://expfactory-experiments.github.io/test-task"
 tags:
 - test

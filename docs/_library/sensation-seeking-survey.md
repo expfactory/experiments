@@ -2,7 +2,7 @@
 layout: experiment
 name:  "sensation-seeking-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/sensation-seeking-survey"
+github: "https://github.com/expfactory-experiments/sensation-seeking-survey"
 preview: "https://expfactory-experiments.github.io/sensation-seeking-survey"
 tags:
 - survey

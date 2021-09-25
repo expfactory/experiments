@@ -2,7 +2,7 @@
 layout: experiment
 name:  "perceptual-metacognition"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/perceptual-metacognition"
+github: "https://github.com/expfactory-experiments/perceptual-metacognition"
 preview: "https://expfactory-experiments.github.io/perceptual-metacognition"
 tags:
 - jspsych

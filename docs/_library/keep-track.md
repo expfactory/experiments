@@ -2,7 +2,7 @@
 layout: experiment
 name:  "keep-track"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/keep-track"
+github: "https://github.com/expfactory-experiments/keep-track"
 preview: "https://expfactory-experiments.github.io/keep-track"
 tags:
 - jspsych

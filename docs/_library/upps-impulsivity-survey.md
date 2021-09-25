@@ -2,7 +2,7 @@
 layout: experiment
 name:  "upps-impulsivity-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/upps-impulsivity-survey"
+github: "https://github.com/expfactory-experiments/upps-impulsivity-survey"
 preview: "https://expfactory-experiments.github.io/upps-impulsivity-survey"
 tags:
 - survey

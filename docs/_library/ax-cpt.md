@@ -2,7 +2,7 @@
 layout: experiment
 name:  "ax-cpt"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/ax-cpt"
+github: "https://github.com/expfactory-experiments/ax-cpt"
 preview: "https://expfactory-experiments.github.io/ax-cpt"
 tags:
 - jspsych

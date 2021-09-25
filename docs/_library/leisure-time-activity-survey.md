@@ -2,7 +2,7 @@
 layout: experiment
 name:  "leisure-time-activity-survey"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/leisure-time-activity-survey"
+github: "https://github.com/expfactory-experiments/leisure-time-activity-survey"
 preview: "https://expfactory-experiments.github.io/leisure-time-activity-survey"
 tags:
 - survey

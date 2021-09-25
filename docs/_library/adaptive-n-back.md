@@ -2,7 +2,7 @@
 layout: experiment
 name:  "adaptive-n-back"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/adaptive-n-back"
+github: "https://github.com/expfactory-experiments/adaptive-n-back"
 preview: "https://expfactory-experiments.github.io/adaptive-n-back"
 tags:
 - jspsych

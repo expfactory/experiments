@@ -2,7 +2,7 @@
 layout: experiment
 name:  "dimensional-set-shifting"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/dimensional-set-shifting"
+github: "https://github.com/expfactory-experiments/dimensional-set-shifting"
 preview: "https://expfactory-experiments.github.io/dimensional-set-shifting"
 tags:
 - jspsych

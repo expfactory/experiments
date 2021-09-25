@@ -2,7 +2,7 @@
 layout: experiment
 name:  "probabilistic-selection"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/probabilistic-selection"
+github: "https://github.com/expfactory-experiments/probabilistic-selection"
 preview: "https://expfactory-experiments.github.io/probabilistic-selection"
 tags:
 - jspsych

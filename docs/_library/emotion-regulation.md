@@ -2,7 +2,7 @@
 layout: experiment
 name:  "emotion-regulation"
 maintainer: "@vsoch"
-github: "https://www.github.com/expfactory-experiments/emotion-regulation"
+github: "https://github.com/expfactory-experiments/emotion-regulation"
 preview: "https://expfactory-experiments.github.io/emotion-regulation"
 tags:
 - emotion
