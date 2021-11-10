@@ -2,7 +2,6 @@
 
 [![CircleCI](https://circleci.com/gh/expfactory/experiments.svg?style=svg)](https://circleci.com/gh/expfactory/experiments)
 
-
 This is the library of official experiments provided by the Experiment Factory. You can browse the [experiment table](https://expfactory.github.io/experiments/) or obtain the resource [programmatically](https://expfactory.github.io/experiments/library.json). 
 
 ## How to Contribute
