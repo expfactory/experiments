@@ -1,9 +1,9 @@
 ---
 layout: experiment
-name:  "brief-senstation-seeking-survey"
+name:  "brief-sensation-seeking-survey"
 maintainer: "@juhng62"
-github: "https://github.com/expfactory-experiments/brief-senstation-seeking-survey"
-preview: "https://expfactory-experiments.github.io/brief-senstation-seeking-survey"
+github: "https://github.com/expfactory-experiments/brief-sensation-seeking-survey"
+preview: "https://expfactory-experiments.github.io/brief-sensation-seeking-survey"
 tags:
 - senstation-seeking
 - survey
