@@ -1,6 +1,6 @@
 '''
 
-test.py: Python testing to ensure correct formatting and varibles included for
+test.py: Python testing to ensure correct formatting and variables included for
          metadata in experiments.
 
 Copyright (c) 2017, Vanessa Sochat
