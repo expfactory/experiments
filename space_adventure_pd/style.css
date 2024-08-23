@@ -1,0 +1,397 @@
+body {
+    height: 100vh;
+    width: 100%;
+    color:white;
+    font-size: 26px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding:0px; 
+}
+
+.small_text {
+    font-size: 20px;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 5px;    
+}
+    
+@media screen and ( max-width : 2000px ) { 
+    body {
+        font-size: 24px;
+    }
+
+    .small_text {
+        font-size: 18px;
+    }
+
+}
+
+
+@media screen and ( max-width : 1800px ) { 
+    body {
+        font-size: 22px;
+    }
+
+    .small_text {
+        font-size: 16px;
+    }
+
+}
+
+
+@media screen and ( max-width : 1600px ) { 
+    body {
+        font-size: 18px;
+    }
+
+    .small_text {
+        font-size: 12px;
+    }
+}
+
+
+@media screen and ( max-width : 1400px ) { 
+    body {
+        font-size: 16px;
+    }
+
+    .small_text {
+        font-size: 10px;
+    }
+}
+
+@media screen and ( max-width : 1200px ) { 
+    body {
+        font-size: 16px;
+    }
+
+    .small_text {
+        font-size: 10px;
+    }
+
+}
+
+@media screen and ( max-width : 1000px ) { 
+    body {
+        font-size: 14px;
+    }
+
+    .small_text {
+        font-size: 8px;
+    }
+}
+
+@media screen and ( max-width : 800px ) { 
+    body {
+        font-size: 12px;
+    }
+
+    .small_text {
+        font-size: 6px;
+    }
+}
+
+
+#screen {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+width: 100vw;
+/* height: 56.25vw; */
+/* height: width ratio = 9/16 = .5625; */
+max-height: 100vh;
+max-width: 177.78vh;
+margin: auto;
+background-color: rgb(13,13, 13);
+}
+
+.back {
+    width: 180px;
+    height: 80px;
+    background-color: blueviolet;
+    position:absolute;
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.img-instr-big{
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        height: auto; 
+}
+
+.img-instr {
+    display: inline-block;
+    position: relative;
+    width: 45%;
+    height: auto;
+}
+
+.img-instr-small {
+    display: inline-block;
+    position: relative;
+    width: 30%;
+    height: auto;
+}
+.planet {
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%); /* This centers the anchor point */
+    height: 19.55%;
+    width: 11%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: center;
+}
+
+.planet:after {
+
+    content: attr(data-points);
+
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -50px;
+    text-align: center;
+    height: auto;
+
+    display: none;
+}
+
+.planet.showing-points:after {
+    display: block;
+    z-index: 3;
+    color: white;
+}
+
+
+#game-container {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+} 
+
+.asteroids {
+    background-image: url("src/debris.png");
+    background-position: center;
+    background-repeat: none;
+    background-size: contain;
+    background-color: rgb(13, 13, 13);
+}
+
+#squares-wrapper {
+    position: absolute;
+    width: 20%;
+    height: 3.5%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  
+    text-align: center;    
+    /* display: none; */
+}
+
+#squares-wrapper[data-num-squares="2"] #square3 {
+    display: none;
+}
+
+.square {
+    background-color: chartreuse;
+    width: 9.845%;
+    height: 100%;
+    margin: 0px 10px 0px 10px;
+    display:inline-block;
+} 
+.hideSquare {
+    visibility: hidden;
+}
+
+
+
+.planet[data-planet-img="1"] { background-image: url("src/planet_1.png");}
+.planet[data-planet-img="2"] { background-image: url("src/planet_2.png");}
+.planet[data-planet-img="3"] { background-image: url("src/planet_3.png");}
+.planet[data-planet-img="4"] { background-image: url("src/planet_4.png");}
+.planet[data-planet-img="5"] { background-image: url("src/planet_5.png");}
+.planet[data-planet-img="6"] { background-image: url("src/planet_6.png");}
+
+div[data-pos="0"] {top:48%; left: 20%;}
+div[data-pos="1"] {top:24%; left: 40%;}
+div[data-pos="2"] {top:24%; left: 60%;}
+div[data-pos="3"] {top:48%; left: 80%;}
+div[data-pos="4"] {top:74%; left: 60%;}
+div[data-pos="5"] {top:74%; left: 40%;}
+
+
+#points-wrapper {
+    width: 52%;
+    height:4%;
+    position:absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: rgba(38, 38, 38);
+    border: 3px solid rgba(38, 38, 38);
+}
+
+.showing-points.good:after {
+    color:chartreuse
+}
+
+
+.showing-points.bad:after {
+    color: #E3001C
+}
+ 
+
+.showing-points.neutral:after {
+    color:#fff 
+}
+
+#points-filling {
+    width: 50%;
+    height:100%;
+    top: 0;
+    left: 0;
+    position:absolute;
+    /* 254,0,1 */
+    background-color:rgb(0, 0, 255);
+    /* border: solid purple; */ 
+}
+
+#red-points-filling {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(227, 0, 28);
+    opacity: 0;
+}
+
+.active {
+    display: block;
+}
+
+.inactive {
+    display: none;
+}
+
+.inactiveStrong {
+    display: none !important;
+}
+
+
+.p1 { top: 48%; left: 20%; }
+.p2 { top: 24%; left: 40%; }
+.p3 { top: 24%; left: 60%; }
+.p4 { top: 48%; left: 80%; }
+.p5 { top: 74%; left: 60%; }
+.p6 { top: 74%; left: 40%; }
+
+.p1-intro { top: 50%; left: 16.5%; }
+.p2-intro { top: 50%; left: 33%;  }
+.p3-intro { top: 50%; left: 49.5%; }
+.p4-intro { top: 50%; left: 67%;  }
+.p5-intro { top: 50%; left: 83%;  }
+
+
+.planetNumber{
+    position:absolute;
+    color: red;
+    z-index: 3;
+    transform: translate(-75%,-100%);
+}
+
+
+#rocket {
+    background-image: url("src/rocket.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8.88%;
+    width: 5%;
+    position:absolute;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+}
+
+#instructions {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(36, 27, 27);
+    /* z-index:3; */
+}
+
+#main-transition-text p {
+    top: 50%;   
+}
+
+
+.text-aligned {
+    position: absolute;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left:50%;
+    text-align: center;
+    z-index: 2; 
+}
+
+.score-display{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+}
+.text-nonaligned {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left:50%;
+    text-align: center;
+}
+
+
+.top{
+    position: absolute;
+    width: 100%;
+    top: 5px;
+}
+
+/* .center {
+    position: absolute;
+    width: 100%;
+    top:50%;
+} */
+
+
+.bottom{
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+}
+
+
+#intro-screen-planets p {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+
+#intro-screen-points p {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+
+.display-over {
+    z-index: 10;
+}
